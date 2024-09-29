@@ -121,3 +121,4 @@ C:\Users\pavilion15\Documents\GitHub\onionxsalad\onion\obj\Debug\net8.0\onion.ge
 C:\Users\pavilion15\Documents\GitHub\onionxsalad\onion\obj\Debug\net8.0\ref\onion.dll
 C:\Users\pavilion15\Documents\GitHub\onionxsalad\onion\obj\Debug\net8.0\onion.csproj.Up2Date
 C:\Users\pavilion15\Documents\GitHub\onionxsalad\onion\bin\Debug\net8.0\HtmlAgilityPack.dll
+C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\HtmlAgilityPack.dll

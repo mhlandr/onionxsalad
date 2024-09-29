@@ -4,7 +4,7 @@ using MongoDB.Driver;
 var builder = WebApplication.CreateBuilder(args);
 
 // MongoDB setup 
-var connectionString = "mongodb://localhost:27017";  // Use your MongoDB connection string
+var connectionString = "mongodb://localhost:27017";  
 var client = new MongoClient(connectionString);
 var database = client.GetDatabase("onionDB"); 
 var collection = database.GetCollection<BsonDocument>("onion_Site"); 

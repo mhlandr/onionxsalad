@@ -7,95 +7,77 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-public class AhmiaScraper
+public class AhmiaScraperService
 {
-    private static readonly HttpClient _httpClient = new HttpClient();
-    private static readonly string _searchUrl = "https://ahmia.fi/search/?q=";
-
-    // MongoDB settings
     private readonly IMongoCollection<BsonDocument> _collection;
 
-    public AhmiaScraper(IMongoCollection<BsonDocument> collection)
+    public AhmiaScraperService(IMongoCollection<BsonDocument> collection)
     {
         _collection = collection;
     }
 
-    public async Task<List<BsonDocument>> ScrapeAndStoreResults(string searchTerm)
+    // Helper method to normalize URLs (get base domain)
+    private string NormalizeUrl(string url)
     {
-        string url = $"{_searchUrl}{Uri.EscapeDataString(searchTerm)}";
-        var htmlDoc = await LoadHtmlFromUrl(url);
-
-        if (htmlDoc == null)
-            throw new Exception("Could not load the Ahmia search page.");
-
-        var searchResults = ExtractSearchResults(htmlDoc);
-
-        // Insert the search results into MongoDB
-        await StoreResultsInDatabase(searchResults);
-
-        return searchResults;
-    }
-
-    private async Task<HtmlDocument> LoadHtmlFromUrl(string url)
-    {
-        var response = await _httpClient.GetAsync(url);
-        if (response.IsSuccessStatusCode)
+        try
         {
-            var pageContents = await response.Content.ReadAsStringAsync();
-            var doc = new HtmlDocument();
-            doc.LoadHtml(pageContents);
-            return doc;
+            var uri = new Uri(url);
+            return uri.Host;  // Return the host part 
         }
-        return null;
+        catch (UriFormatException)
+        {
+            return url; // In case of a bad URL, return the original
+        }
     }
 
-    private List<BsonDocument> ExtractSearchResults(HtmlDocument doc)
+    public async Task<List<BsonDocument>> ScrapeAndStoreResultsAsync(string query)
     {
-        var results = new List<BsonDocument>();
+        var httpClient = new HttpClient();
+        var url = $"https://ahmia.fi/search/?q={query}";
+        var response = await httpClient.GetStringAsync(url);
 
-        var resultNodes = doc.DocumentNode.SelectNodes("//li[@class='result']");
-        if (resultNodes != null)
+        var htmlDocument = new HtmlDocument();
+        htmlDocument.LoadHtml(response);
+
+        var searchResults = htmlDocument.DocumentNode.SelectNodes("//li[@class='result']");
+        var resultsList = new List<BsonDocument>();
+
+        foreach (var result in searchResults)
         {
-            foreach (var resultNode in resultNodes)
+            var siteNameNode = result.SelectSingleNode(".//h4/a");
+            var descriptionNode = result.SelectSingleNode(".//p");
+            var onionUrlNode = result.SelectSingleNode(".//cite");
+
+            if (siteNameNode != null && onionUrlNode != null)
             {
-                // Extract title (site name)
-                var titleNode = resultNode.SelectSingleNode(".//h4/a");
-                var siteName = titleNode != null ? titleNode.InnerText.Trim() : "";
+                string siteName = siteNameNode.InnerText.Trim();
+                string description = descriptionNode != null ? descriptionNode.InnerText.Trim() : "No description available";
+                string onionUrl = onionUrlNode.InnerText.Trim();
+                string normalizedUrl = NormalizeUrl(onionUrl);  // Normalize the URL
 
-                // Extract onion link
-                var onionLinkNode = resultNode.SelectSingleNode(".//h4/a[@href]");
-                var onionUrl = onionLinkNode != null ? onionLinkNode.Attributes["href"].Value : "";
+                // Check if the site already exists in the database
+                var existingSite = await _collection.Find(new BsonDocument("onion_url", normalizedUrl)).FirstOrDefaultAsync();
 
-                // Extract description
-                var descriptionNode = resultNode.SelectSingleNode(".//p");
-                var description = descriptionNode != null ? descriptionNode.InnerText.Trim() : "";
-
-                // Extract the domain or onion link
-                var citeNode = resultNode.SelectSingleNode(".//cite");
-                var onionUrlExtracted = citeNode != null ? citeNode.InnerText.Trim() : "";
-
-                // Build MongoDB document
-                var bsonDoc = new BsonDocument
+                if (existingSite == null)
                 {
-                    { "category", description },  // Put description in category
-                    { "flaky", false },           // Assuming flaky status can be set to false by default
-                    { "site_name", siteName },
-                    { "onion_url", onionUrlExtracted },
-                    { "proof_url", onionUrl }
-                };
+                    // Append the site name to the description (category field)
+                    string category = $"{description} - {siteName}";
 
-                results.Add(bsonDoc);
+                    var document = new BsonDocument
+                    {
+                        { "category", category },  // Category with description + site name
+                        { "flaky", true },
+                        { "site_name", siteName },
+                        { "onion_url", normalizedUrl }
+                    };
+
+                    // Insert into the database
+                    await _collection.InsertOneAsync(document);
+                    resultsList.Add(document);
+                }
             }
         }
 
-        return results;
-    }
-
-    private async Task StoreResultsInDatabase(List<BsonDocument> searchResults)
-    {
-        if (searchResults.Any())
-        {
-            await _collection.InsertManyAsync(searchResults);
-        }
+        return resultsList;
     }
 }
