@@ -1,59 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Search Page";
+    ViewData["Title"] = "Search";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        body, html {
-            height: 100%;
-        }
+<h2>Search Ahmia</h2>
 
-        .centered-form {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
-</head>
-<body>
-    <div class="container centered-form">
-        <h1>Search Onion</h1>
-        <form asp-action="Search" method="post" class="form-inline mt-3">
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Enter search term" />
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Search</button>
-        </form>
-
-        <!-- Display error message if any -->
-        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-        {
-            <div class="alert alert-danger mt-3">
-                @ViewBag.ErrorMessage
-            </div>
-        }
-
-        <!-- Display search results -->
-        @if (ViewBag.Results != null)
-        {
-            <div class="mt-4">
-                <h4>Search Results:</h4>
-                <ul>
-                    @foreach (var item in ViewBag.Results)
-                    {
-                        <li>@item</li>
-                    }
-                </ul>
-            </div>
-        }
+<form asp-action="Search" method="post">
+    <div>
+        <input type="text" name="searchTerm" placeholder="Enter search term" required />
+        <button type="submit">Search</button>
     </div>
-</body>
-</html>
+</form>

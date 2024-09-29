@@ -1,0 +1,15 @@
+﻿@using MongoDB.Bson
+@model List<BsonDocument>
+
+<h2>Search Results</h2>
+<ul>
+    @foreach (var result in Model)
+    {
+        <li>
+            <strong>@result["site_name"]</strong> - @result["category"]
+            <br />
+            <a href="@result["onion_url"]" target="_blank">@result["onion_url"]</a>
+            <br /><br />
+        </li>
+    }
+</ul>

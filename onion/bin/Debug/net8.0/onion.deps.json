@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "onion/1.0.0": {
         "dependencies": {
+          "HtmlAgilityPack": "1.11.66",
           "MongoDB.Driver": "2.29.0"
         },
         "runtime": {
@@ -41,6 +42,14 @@
           "lib/net5.0/DnsClient.dll": {
             "assemblyVersion": "1.6.1.0",
             "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.66": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.66.0",
+            "fileVersion": "1.11.66.0"
           }
         }
       },
@@ -184,6 +193,13 @@
       "sha512": "sha512-4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
       "path": "dnsclient/1.6.1",
       "hashPath": "dnsclient.1.6.1.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.66": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kRlJ/rnvDzSPZv294uR+k3IR04eQO1IxdYJuUPPFETZ0W2NDDRiuZlfgYaDX17OVvODJFWj6+lsMOko/Xj5XVQ==",
+      "path": "htmlagilitypack/1.11.66",
+      "hashPath": "htmlagilitypack.1.11.66.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/2.0.0": {
       "type": "package",
