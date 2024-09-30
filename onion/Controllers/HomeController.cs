@@ -25,9 +25,21 @@ public class HomeController : Controller
     {
         var scraper = new AhmiaScraperService(_collection);
 
-        var results = await scraper.ScrapeAndStoreResultsAsync(searchTerm);
+        // Step 1: Fetch results from the database
+        var existingResults = await scraper.GetResultsFromDbAsync(searchTerm);
 
-        return View("SearchResults", results);
+        // Step 2: Return the existing results immediately
+        ViewData["InitialResults"] = existingResults;
+        var viewResult = View("SearchResults", existingResults);
+
+        // Step 3: Trigger the scraping process for new results in the background
+        _ = Task.Run(async () =>
+        {
+            var newResults = await scraper.ScrapeAndStoreResultsAsync(searchTerm);
+            // You can log or notify the user of the new results later if needed
+        });
+
+        return viewResult; // Send the initial DB results
     }
 
     // Method to display all search results from the MongoDB collection

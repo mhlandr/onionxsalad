@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-
 public class AhmiaScraperService
 {
     private readonly IMongoCollection<BsonDocument> _collection;
@@ -30,6 +29,15 @@ public class AhmiaScraperService
         }
     }
 
+    // Check the database for existing results
+    public async Task<List<BsonDocument>> GetResultsFromDbAsync(string query)
+    {
+        var filter = Builders<BsonDocument>.Filter.Regex("site_name", new BsonRegularExpression(query, "i"));
+        var results = await _collection.Find(filter).ToListAsync();
+        return results;
+    }
+
+    // Scrape Ahmia and store new results
     public async Task<List<BsonDocument>> ScrapeAndStoreResultsAsync(string query)
     {
         var httpClient = new HttpClient();
