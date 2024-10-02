@@ -3,12 +3,21 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
+using System.Threading;
 
 public class HomeController : Controller
 {
     private readonly IMongoCollection<BsonDocument> _collection;
 
-    // Inject MongoDB collection into the controller
+    // Queue to hold search requests
+    private static ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
+
+    // Semaphore to limit concurrent requests
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1); // Allows 1 request to be processed at a time
+
+    private static HashSet<string> _processingRequests = new HashSet<string>(); // To avoid duplicate scrapes
+
     public HomeController(IMongoCollection<BsonDocument> collection)
     {
         _collection = collection;
@@ -32,21 +41,37 @@ public class HomeController : Controller
         ViewData["InitialResults"] = existingResults;
         var viewResult = View("SearchResults", existingResults);
 
-        // Step 3: Trigger the scraping process for new results in the background
-        _ = Task.Run(async () =>
-        {
-            var newResults = await scraper.ScrapeAndStoreResultsAsync(searchTerm);
-            // You can log or notify the user of the new results later if needed
-        });
+        // Step 3: Add the search term to the queue for background processing
+        _ = Task.Run(async () => await ProcessQueue(searchTerm));
 
-        return viewResult; // Send the initial DB results
+        return viewResult;
     }
 
-    // Method to display all search results from the MongoDB collection
-    public async Task<IActionResult> DisplaySearchResults()
+    // Queue processing logic
+    private async Task ProcessQueue(string searchTerm)
     {
-        var results = await _collection.Find(new BsonDocument()).ToListAsync();
+        // Add the search term to the queue
+        _searchQueue.Enqueue(searchTerm);
 
-        return View("SearchResults", results);
+        // Avoid multiple scrapes for the same term simultaneously
+        if (_processingRequests.Contains(searchTerm)) return;
+
+        _processingRequests.Add(searchTerm);
+
+        try
+        {
+            await _semaphore.WaitAsync(); // Ensure only one scrape operation at a time
+
+            while (_searchQueue.TryDequeue(out var termToProcess))
+            {
+                var scraper = new AhmiaScraperService(_collection);
+                await scraper.ScrapeAndStoreResultsAsync(termToProcess);
+            }
+        }
+        finally
+        {
+            _processingRequests.Remove(searchTerm);
+            _semaphore.Release(); // Allow the next item in the queue to process
+        }
     }
 }

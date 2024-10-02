@@ -16,6 +16,7 @@
             <strong>@result["site_name"]</strong> - @result["category"]
             <br />
             <a href="@result["onion_url"]" target="_blank">@result["onion_url"]</a>
+            <button type="button" onclick="copyToClipboard('@result["onion_url"]')">Copy URL</button>
             <br /><br />
         </li>
     }
