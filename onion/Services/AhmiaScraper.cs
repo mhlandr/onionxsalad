@@ -50,6 +50,12 @@ public class AhmiaScraperService
         var searchResults = htmlDocument.DocumentNode.SelectNodes("//li[@class='result']");
         var resultsList = new List<BsonDocument>();
 
+        // Return an empty list if no results are found
+        if (searchResults == null)
+        {
+            return new List<BsonDocument>();  
+        }
+
         foreach (var result in searchResults)
         {
             var siteNameNode = result.SelectSingleNode(".//h4/a");

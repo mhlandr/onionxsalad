@@ -1,11 +1,19 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using onion.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("AuthSystemDbContexConnection") ?? throw new InvalidOperationException("Connection string 'AuthSystemDbContexConnection' not found.");
+
+builder.Services.AddDbContext<AuthSystemDbContex>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthSystemDbContex>();
 
 // MongoDB setup 
-var connectionString = "mongodb://localhost:27017";  
-var client = new MongoClient(connectionString);
+var connectionStringMongo = "mongodb://localhost:27017";  
+var client = new MongoClient(connectionStringMongo);
 var database = client.GetDatabase("onionDB"); 
 var collection = database.GetCollection<BsonDocument>("onion_Site"); 
 
@@ -13,6 +21,7 @@ builder.Services.AddSingleton<IMongoCollection<BsonDocument>>(collection);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();  
 
 var app = builder.Build();
 
@@ -31,5 +40,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=SearchPage}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

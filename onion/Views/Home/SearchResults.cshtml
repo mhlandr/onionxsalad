@@ -21,3 +21,23 @@
         </li>
     }
 </ul>
+
+<script>
+    function copyToClipboard(url) {
+        // Create a temporary input element to store the URL
+        var tempInput = document.createElement("input");
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+
+        // Select the text in the input element
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the selected text to the clipboard
+        document.execCommand("copy");
+
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
+
+    }
+</script>

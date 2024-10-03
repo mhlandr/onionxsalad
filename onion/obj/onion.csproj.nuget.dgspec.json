@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pavilion15\\Documents\\GitHub\\onionxsalad\\onion\\onion.csproj": {}
+    "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pavilion15\\Documents\\GitHub\\onionxsalad\\onion\\onion.csproj": {
+    "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pavilion15\\Documents\\GitHub\\onionxsalad\\onion\\onion.csproj",
+        "projectUniqueName": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj",
         "projectName": "onion",
-        "projectPath": "C:\\Users\\pavilion15\\Documents\\GitHub\\onionxsalad\\onion\\onion.csproj",
-        "packagesPath": "C:\\Users\\pavilion15\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pavilion15\\Documents\\GitHub\\onionxsalad\\onion\\obj\\",
+        "projectPath": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj",
+        "packagesPath": "C:\\Users\\mhlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pavilion15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mhlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +53,28 @@
               "target": "Package",
               "version": "[1.11.66, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.29.0, )"
@@ -74,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
