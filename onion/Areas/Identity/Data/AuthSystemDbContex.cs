@@ -10,6 +10,7 @@ public class AuthSystemDbContex : IdentityDbContext<AppUser>
     public AuthSystemDbContex(DbContextOptions<AuthSystemDbContex> options)
         : base(options)
     {
+
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
