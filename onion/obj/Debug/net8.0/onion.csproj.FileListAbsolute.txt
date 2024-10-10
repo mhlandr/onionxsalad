@@ -352,3 +352,5 @@ C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\runtimes\wi
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\obj\Debug\net8.0\onion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\Knapcode.TorSharp.dll
+C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\System.ServiceModel.Syndication.dll

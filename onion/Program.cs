@@ -9,7 +9,8 @@ var connectionString = builder.Configuration.GetConnectionString("AuthSystemDbCo
 
 builder.Services.AddDbContext<AuthSystemDbContex>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthSystemDbContex>();
+builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<AuthSystemDbContex>();
+
 
 // MongoDB setup 
 var connectionStringMongo = "mongodb://localhost:27017";  
@@ -21,7 +22,13 @@ builder.Services.AddSingleton<IMongoCollection<BsonDocument>>(collection);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();  
+builder.Services.AddRazorPages();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireUppercase = false;
+
+});
 
 var app = builder.Build();
 

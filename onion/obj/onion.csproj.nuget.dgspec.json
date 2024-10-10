@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[1.11.66, )"
             },
+            "Knapcode.TorSharp": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
