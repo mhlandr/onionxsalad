@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("onion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54b6c47a2f85f713fd3820f432a45d7bdcc93915")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0da9760134dbf711fe7d0b9f3fc78e39b0e8ec0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("onion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("onion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
