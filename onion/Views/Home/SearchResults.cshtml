@@ -2,6 +2,7 @@
 @model List<BsonDocument>
 
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@Html.AntiForgeryToken()
 
 <!-- This will get the antiforgery token and include it in JavaScript -->
 <script>
@@ -45,17 +46,22 @@
     }
 
     function checkOnlineStatus(url, button) {
+        // Ensure the URL starts with http:// or https://
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+
         // Disable the button while checking
         button.disabled = true;
         button.innerText = "Checking...";
 
-        fetch('/Controllers/TorController', {
+        fetch('/Tor/CheckWebsiteStatus', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'RequestVerificationToken': '@Antiforgery.GetAndStoreTokens(Context).RequestToken'
+                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
             },
-            body: JSON.stringify({ onionUrl: url })
+            body: JSON.stringify({ onionUrl: url })  // Send the properly formatted URL
         })
             .then(response => response.json())
             .then(data => {
