@@ -19,6 +19,7 @@
 </form>
 
 <ul>
+    @if (Model != null && Model.Any()){
     @foreach (var result in Model)
     {
         <li>
@@ -30,6 +31,11 @@
             <span class="online-status"></span>
             <br /><br />
         </li>
+        }
+    }
+    else
+    {
+        <p> </p>
     }
 </ul>
 

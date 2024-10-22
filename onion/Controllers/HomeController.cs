@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Threading;
+using NuGet.Packaging.Licenses;
 
 public class HomeController : Controller
 {
@@ -14,9 +15,9 @@ public class HomeController : Controller
     private static ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
 
     // Semaphore to limit concurrent requests
-    private static SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1); // Allows 1 request to be processed at a time
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(5, 5); // Allows n request to be processed at a time
 
-    private static HashSet<string> _processingRequests = new HashSet<string>(); // To avoid duplicate scrapes
+    private static ConcurrentDictionary<string, bool> _processingRequests = new ConcurrentDictionary<string, bool>(); // Thread-safe version
 
     public HomeController(IMongoCollection<BsonDocument> collection)
     {
@@ -25,6 +26,12 @@ public class HomeController : Controller
 
     [HttpGet]
     public IActionResult SearchPage()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult SearchResults()
     {
         return View();
     }
@@ -42,7 +49,18 @@ public class HomeController : Controller
         var viewResult = View("SearchResults", existingResults);
 
         // Step 3: Add the search term to the queue for background processing
-        _ = Task.Run(async () => await ProcessQueue(searchTerm));
+        _ = Task.Run(async () =>
+        {
+            try
+            {
+                await ProcessQueue(searchTerm);
+            }
+            catch (Exception ex)
+            {
+                // Log the error or handle it appropriately
+                Console.WriteLine($"Error in background task: {ex.Message}");
+            }
+        });
 
         return viewResult;
     }
@@ -54,9 +72,9 @@ public class HomeController : Controller
         _searchQueue.Enqueue(searchTerm);
 
         // Avoid multiple scrapes for the same term simultaneously
-        if (_processingRequests.Contains(searchTerm)) return;
+        if (_processingRequests.ContainsKey(searchTerm)) return;
 
-        _processingRequests.Add(searchTerm);
+        _processingRequests.TryAdd(searchTerm, true);
 
         try
         {
@@ -70,7 +88,7 @@ public class HomeController : Controller
         }
         finally
         {
-            _processingRequests.Remove(searchTerm);
+            _processingRequests.TryRemove(searchTerm, out _);
             _semaphore.Release(); // Allow the next item in the queue to process
         }
     }

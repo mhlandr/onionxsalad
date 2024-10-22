@@ -1,0 +1,7 @@
+# Full sample at https://github.com/torproject/tor/blob/master/src/config/torrc.sample.in
+ControlPort 9051
+DataDirectory C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-14.0\data\tor
+GeoIPFile C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-14.0\data\geoip
+GeoIPv6File C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-14.0\data\geoip6
+HashedControlPassword 16:D5CE7BF479B03D82604B4C43B33119EB6F0398C281299713941A8DC72C
+SocksPort 19050

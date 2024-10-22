@@ -108,7 +108,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=SearchPage}/{id?}");
+    pattern: "{controller=Home}/{action=SearchResults}/{id?}");
 
 app.MapRazorPages();
 

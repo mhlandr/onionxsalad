@@ -1,0 +1,60 @@
+# Tor state file last generated on 2024-10-23 01:35:16 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+CircuitBuildTimeBin 215 1
+CircuitBuildTimeBin 235 5
+CircuitBuildTimeBin 245 1
+CircuitBuildTimeBin 255 2
+CircuitBuildTimeBin 265 1
+CircuitBuildTimeBin 275 2
+CircuitBuildTimeBin 285 5
+CircuitBuildTimeBin 295 7
+CircuitBuildTimeBin 305 3
+CircuitBuildTimeBin 325 1
+CircuitBuildTimeBin 335 6
+CircuitBuildTimeBin 345 3
+CircuitBuildTimeBin 355 3
+CircuitBuildTimeBin 365 2
+CircuitBuildTimeBin 375 3
+CircuitBuildTimeBin 385 3
+CircuitBuildTimeBin 395 1
+CircuitBuildTimeBin 415 3
+CircuitBuildTimeBin 425 2
+CircuitBuildTimeBin 435 2
+CircuitBuildTimeBin 445 1
+CircuitBuildTimeBin 465 2
+CircuitBuildTimeBin 495 1
+CircuitBuildTimeBin 505 1
+CircuitBuildTimeBin 555 1
+CircuitBuildTimeBin 665 1
+CircuitBuildTimeBin 675 1
+CircuitBuildTimeBin 755 1
+CircuitBuildTimeBin 795 1
+CircuitBuildTimeBin 865 1
+CircuitBuildTimeBin 1375 1
+CircuitBuildTimeBin 1655 1
+Dormant 0
+Guard in=default rsa_id=71A1DA0D554EC4107DD6ED7303D38DC9A9F8B241 nickname=chaoscode2 sampled_on=2024-10-16T03:26:47 sampled_idx=0 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-16T19:47:25 confirmed_idx=1 pb_use_attempts=17.000000 pb_use_successes=17.000000 pb_circ_attempts=24.000000 pb_circ_successes=24.000000 pb_successful_circuits_closed=24.000000
+Guard in=default rsa_id=C37F87C0125E26E6ACF54366FA2198209E856ABE nickname=pataky sampled_on=2024-10-11T11:51:29 sampled_idx=1 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-14T03:40:40 confirmed_idx=0 pb_use_attempts=17.000000 pb_use_successes=17.000000 pb_circ_attempts=26.000000 pb_circ_successes=25.000000 pb_successful_circuits_closed=25.000000
+Guard in=default rsa_id=1D6528AA190F17B2C055CBD042D672778A265661 nickname=Unnamed sampled_on=2024-10-11T22:38:33 sampled_idx=2 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=05C32C5EE14454E0C4CD81DAE0F3DC32F729DA4B nickname=TORtuga sampled_on=2024-10-19T14:20:18 sampled_idx=3 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=CA1684516B7FECF3DB76D43FD02F56D8B95E8A69 nickname=D4rkKn1gh7 sampled_on=2024-10-10T23:44:16 sampled_idx=4 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=675CFAC38BE3C9A26C3A2DD7CBC0E616F68624CA nickname=mullbinde5 sampled_on=2024-10-17T15:21:47 sampled_idx=5 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=C5E136F09CB3599DEF2709393152331EDD6D690E nickname=SupportNetwork sampled_on=2024-10-18T18:14:20 sampled_idx=6 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=1094E003A823F7DD3AA5FC017801937F7C8ECE7F nickname=prsv sampled_on=2024-10-22T07:32:50 sampled_idx=7 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=3A04AC8969E55DF51C8D11C49ABF18A0CC847FC0 nickname=Unnamed sampled_on=2024-10-18T13:45:04 sampled_idx=8 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=02EC629306C61EE1D3BDD4DD978514B99E226EA0 nickname=bauruine sampled_on=2024-10-16T07:30:21 sampled_idx=9 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=C6C2F339836E2A1EFF64B9DAFCB00C1A0D48D5C7 nickname=Unnamed sampled_on=2024-10-18T07:25:10 sampled_idx=10 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=9EEE861CD8A5FE26A1F276879323172F5B91082C nickname=NixOS sampled_on=2024-10-12T18:07:51 sampled_idx=11 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=E7A3DA42BCA86430F089DD32C3FDA33534E76F19 nickname=waveguide01 sampled_on=2024-10-18T22:14:19 sampled_idx=12 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=31588E6B91E26E54C32CA0F44A2016A92E1CC479 nickname=Unnamed sampled_on=2024-10-20T09:37:40 sampled_idx=13 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=0577DE2890FB909C459E056CD41414A8C6C110D3 nickname=bzxed sampled_on=2024-10-14T21:01:47 sampled_idx=14 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=52EFF66154E0F2C8BCB23E121AA687C5E617993F nickname=ketatrade sampled_on=2024-10-21T02:17:34 sampled_idx=15 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=D405FCCF06ADEDF898DF2F29C9348DCB623031BA nickname=gGDHjdcC6zAlM8k08lY sampled_on=2024-10-13T13:55:08 sampled_idx=16 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=8BB55A3AFBB7E5D9EB83215DEC8F219E68DF9B6D nickname=PoloUnivAretino sampled_on=2024-10-16T23:10:06 sampled_idx=17 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=2FC28BE4F3949D8F7E347BB5495BFB0C93EB340A nickname=prsv sampled_on=2024-10-20T20:22:32 sampled_idx=18 sampled_by=0.4.8.12 listed=1
+Guard in=default rsa_id=2F5119F2099886176AFCBCE5E95053CE5C92661B nickname=Brutus sampled_on=2024-10-17T02:56:25 sampled_idx=19 sampled_by=0.4.8.12 listed=1
+LastWritten 2024-10-22 22:35:16
+TorVersion Tor 0.4.8.12 (git-2beaa7557c3c93ec)
+TotalBuildTimes 69

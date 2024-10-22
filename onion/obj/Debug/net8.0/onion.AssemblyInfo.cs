@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("onion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e481b3b10c802c51de490c70ebf48a8de02b851")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00925c0bfd85782236b4a21c274d20607d43ccbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("onion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("onion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

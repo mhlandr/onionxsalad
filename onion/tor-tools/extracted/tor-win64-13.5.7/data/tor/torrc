@@ -3,5 +3,5 @@ ControlPort 9051
 DataDirectory C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-13.5.7\data\tor
 GeoIPFile C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-13.5.7\data\geoip
 GeoIPv6File C:\Users\mhlan\source\repos\onion\onionxsalad\onion\./tor-tools/extracted\tor-win64-13.5.7\data\geoip6
-HashedControlPassword 16:7DBDE6EDEADF592560127A1509E2682C682C6531B9344BFBB7F9CD368E
+HashedControlPassword 16:36A7297C5949ED2D605EC302C895787C06D79663F7799D464D06121504
 SocksPort 19050
