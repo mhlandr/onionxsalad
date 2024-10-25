@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "ScreenshotController",
+    "Method": "CaptureOnionScreenshot",
+    "RelativePath": "api/Screenshot/capture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "onion.Models.ScreenshotPayload",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
