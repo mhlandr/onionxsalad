@@ -42,33 +42,28 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Register TorSharpProxy
 builder.Services.AddSingleton(provider =>
 {
-    // Configure TorSharp settings
     var settings = new TorSharpSettings
     {
-        ZippedToolsDirectory = "./tor-tools",           // Path to store the downloaded zip files
-        ExtractedToolsDirectory = "./tor-tools/extracted", // Path to extract Tor and Privoxy tools
-        PrivoxySettings = { Port = 18118 },             // Privoxy port for HTTP proxy
-        TorSocksPort = 19050,                           // Tor SOCKS proxy port
-        TorControlPort = 9051                           // Tor Control port
+        ZippedToolsDirectory = "./tor-tools",
+        ExtractedToolsDirectory = "./tor-tools/extracted",
+        PrivoxySettings = { Port = 18118 },
+        TorSocksPort = 19050,
+        TorControlPort = 9051
     };
 
-    // Fetch Tor and Privoxy tools
     var fetcher = new TorSharpToolFetcher(settings, new HttpClient());
-
-    // Start TorSharpProxy asynchronously and log if any issues occur
     try
     {
-        fetcher.FetchAsync().Wait();  // Download the tools
+        fetcher.FetchAsync().Wait();
         var proxy = new TorSharpProxy(settings);
-        proxy.ConfigureAndStartAsync().Wait();  // Start the Tor proxy
-
+        proxy.ConfigureAndStartAsync().Wait();
         return proxy;
     }
     catch (Exception ex)
     {
         var logger = provider.GetRequiredService<ILogger<Program>>();
         logger.LogError(ex, "Failed to start Tor proxy");
-        throw;  // Re-throw the exception after logging
+        throw;
     }
 });
 
@@ -78,19 +73,33 @@ builder.Services.AddHttpClient("TorClient")
     {
         return new HttpClientHandler
         {
-            Proxy = new WebProxy(new Uri("http://localhost:18118")), // Use Privoxy as the HTTP proxy
+            Proxy = new WebProxy(new Uri("http://localhost:18118")),
             UseProxy = true
         };
     })
-    .SetHandlerLifetime(TimeSpan.FromMinutes(5))  // Reuse the handler for up to 5 minutes
+    .SetHandlerLifetime(TimeSpan.FromMinutes(5))
     .ConfigureHttpClient(client =>
     {
-        client.Timeout = TimeSpan.FromMinutes(2);  // Increase timeout to handle slow .onion responses
+        client.Timeout = TimeSpan.FromMinutes(2);
     });
 
 // Register MVC
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+// Configure CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins", builder =>
+    {
+        builder.WithOrigins("https://example.com", "https://another-example.com") // Add allowed origins here
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+// Register ScreenshotService as a scoped service
+builder.Services.AddScoped<ScreenshotService>();
 
 var app = builder.Build();
 
@@ -104,6 +113,10 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+// Use CORS policy
+app.UseCors("AllowSpecificOrigins");
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

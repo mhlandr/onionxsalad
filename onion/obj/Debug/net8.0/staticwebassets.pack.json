@@ -249,6 +249,38 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241025124946.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20241025124946.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241025125036.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20241025125036.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241025125130.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20241025125130.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241025125539.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20241025125539.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
+      "PackagePath": "staticwebassets\\scripts\\capture_screenshot.js"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\package-lock.json",
+      "PackagePath": "staticwebassets\\scripts\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\package.json",
+      "PackagePath": "staticwebassets\\scripts\\package.json"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.onion.props",
       "PackagePath": "build\\onion.props"
     },

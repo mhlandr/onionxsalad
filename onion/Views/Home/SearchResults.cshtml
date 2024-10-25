@@ -11,34 +11,53 @@
 
 <h2 style="text-align: center;">Search Ahmia</h2>
 
-<form asp-action="Search" method="post" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
-    <div style="text-align: center;">
-        <input type="text" name="searchTerm" placeholder="Enter search term" required style="padding: 10px; margin-bottom: 10px; width: 300px;" />
-        <button type="submit" style="padding: 10px 20px;">Search</button>
+<!-- Main container to hold search results and screenshot -->
+<div style="display: flex; justify-content: space-between; margin-top: 20px;">
+
+    <!-- Left section: Search form and results -->
+    <div style="flex: 1;">
+        <form asp-action="Search" method="post" style="display: flex; flex-direction: column; align-items: center;">
+            <div style="text-align: center;">
+                <input type="text" name="searchTerm" placeholder="Enter search term" required style="padding: 10px; margin-bottom: 10px; width: 300px;" />
+                <button type="submit" style="padding: 10px 20px;">Search</button>
+            </div>
+        </form>
+
+        <ul>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var result in Model)
+                {
+                    <li>
+                        <strong>@result["site_name"]</strong> - @result["category"]
+                        <br />
+                        <a href="@result["onion_url"]" target="_blank">@result["onion_url"]</a>
+                        <button type="button" onclick="copyToClipboard('@result["onion_url"]')">Copy URL</button>
+                        <button type="button" onclick="checkOnlineStatus('@result["onion_url"]', this)">Check if Online</button>
+
+                        <!-- New button for capturing the screenshot -->
+                        <button type="button" onclick="captureScreenshot('@result["onion_url"]', this)">Capture Screenshot</button>
+
+                        <span class="online-status"></span>
+                        <br /><br />
+                    </li>
+                }
+            }
+            else
+            {
+                <li>No results found.</li>
+            }
+        </ul>
     </div>
-</form>
 
-<ul>
-    @if (Model != null && Model.Any()){
-    @foreach (var result in Model)
-    {
-        <li>
-            <strong>@result["site_name"]</strong> - @result["category"]
-            <br />
-            <a href="@result["onion_url"]" target="_blank">@result["onion_url"]</a>
-            <button type="button" onclick="copyToClipboard('@result["onion_url"]')">Copy URL</button>
-            <button type="button" onclick="checkOnlineStatus('@result["onion_url"]', this)">Check if Online</button>
-            <span class="online-status"></span>
-            <br /><br />
-        </li>
-        }
-    }
-    else
-    {
-        <p> </p>
-    }
-</ul>
-
+    <!-- Right section: Screenshot display -->
+    <div style="flex: 1; margin-left: 20px;">
+        <h3>Captured Screenshot</h3>
+        <div id="screenshot-container" style="text-align: center;">
+            <img id="screenshot-preview" src="" alt="Screenshot" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd;">
+        </div>
+    </div>
+</div>
 
 <script>
     function copyToClipboard(url) {
@@ -52,12 +71,10 @@
     }
 
     function checkOnlineStatus(url, button) {
-        // Ensure the URL starts with http:// or https://
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "http://" + url;
         }
 
-        // Disable the button while checking
         button.disabled = true;
         button.innerText = "Checking...";
 
@@ -67,25 +84,52 @@
                 'Content-Type': 'application/json',
                 'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
             },
-            body: JSON.stringify({ onionUrl: url })  // Send the properly formatted URL
+            body: JSON.stringify({ onionUrl: url })
         })
-            .then(response => response.json())
-            .then(data => {
-                const statusSpan = button.nextElementSibling;
-                if (data.isOnline) {
-                    statusSpan.textContent = "Online";
-                    statusSpan.style.color = "green";
-                } else {
-                    statusSpan.textContent = "Offline";
-                    statusSpan.style.color = "red";
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                button.disabled = false;
-                button.innerText = "Check if Online";
+        .then(response => response.json())
+        .then(data => {
+            const statusSpan = button.nextElementSibling;
+            if (data.isOnline) {
+                statusSpan.textContent = "Online";
+                statusSpan.style.color = "green";
+            } else {
+                statusSpan.textContent = "Offline";
+                statusSpan.style.color = "red";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            button.disabled = false;
+            button.innerText = "Check if Online";
+        });
+    }
+
+    async function captureScreenshot(onionUrl, button) {
+        try {
+            button.disabled = true;
+            button.textContent = 'Capturing...';
+
+            const response = await fetch('/api/screenshot/capture', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: onionUrl })
             });
+
+            if (!response.ok) throw new Error('Failed to capture screenshot');
+
+            const data = await response.json();
+            const imgElement = document.getElementById('screenshot-preview');
+            imgElement.src = data.path;  // Ensure the returned path is correct
+            imgElement.style.display = 'block';
+
+            button.textContent = 'Capture Screenshot';
+        } catch (error) {
+            console.error('Error capturing screenshot:', error);
+            alert('An error occurred while capturing the screenshot. Please try again.');
+        } finally {
+            button.disabled = false;
+        }
     }
 </script>
