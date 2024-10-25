@@ -1,4 +1,4 @@
-# Tor state file last generated on 2024-10-25 13:03:02 local time
+# Tor state file last generated on 2024-10-25 13:18:16 local time
 # Other times below are in UTC
 # You *do not* need to edit this file.
 
@@ -6,46 +6,47 @@ CircuitBuildTimeBin 145 1
 CircuitBuildTimeBin 155 1
 CircuitBuildTimeBin 165 2
 CircuitBuildTimeBin 175 5
-CircuitBuildTimeBin 185 8
+CircuitBuildTimeBin 185 9
 CircuitBuildTimeBin 195 6
-CircuitBuildTimeBin 205 5
-CircuitBuildTimeBin 215 2
+CircuitBuildTimeBin 205 7
+CircuitBuildTimeBin 215 5
 CircuitBuildTimeBin 225 2
-CircuitBuildTimeBin 235 9
+CircuitBuildTimeBin 235 10
 CircuitBuildTimeBin 245 10
 CircuitBuildTimeBin 255 8
 CircuitBuildTimeBin 265 8
-CircuitBuildTimeBin 275 8
-CircuitBuildTimeBin 285 11
+CircuitBuildTimeBin 275 10
+CircuitBuildTimeBin 285 12
 CircuitBuildTimeBin 295 12
-CircuitBuildTimeBin 305 6
-CircuitBuildTimeBin 315 6
+CircuitBuildTimeBin 305 7
+CircuitBuildTimeBin 315 7
 CircuitBuildTimeBin 325 2
 CircuitBuildTimeBin 335 9
-CircuitBuildTimeBin 345 6
+CircuitBuildTimeBin 345 7
 CircuitBuildTimeBin 355 6
 CircuitBuildTimeBin 365 7
 CircuitBuildTimeBin 375 3
 CircuitBuildTimeBin 385 4
 CircuitBuildTimeBin 395 3
-CircuitBuildTimeBin 405 3
+CircuitBuildTimeBin 405 4
 CircuitBuildTimeBin 415 5
-CircuitBuildTimeBin 425 5
+CircuitBuildTimeBin 425 6
 CircuitBuildTimeBin 435 3
-CircuitBuildTimeBin 445 4
+CircuitBuildTimeBin 445 5
 CircuitBuildTimeBin 455 1
 CircuitBuildTimeBin 465 3
 CircuitBuildTimeBin 475 2
 CircuitBuildTimeBin 495 3
 CircuitBuildTimeBin 505 3
 CircuitBuildTimeBin 515 1
+CircuitBuildTimeBin 525 1
 CircuitBuildTimeBin 545 2
 CircuitBuildTimeBin 555 1
 CircuitBuildTimeBin 565 1
 CircuitBuildTimeBin 605 2
 CircuitBuildTimeBin 665 1
 CircuitBuildTimeBin 675 1
-CircuitBuildTimeBin 685 1
+CircuitBuildTimeBin 685 2
 CircuitBuildTimeBin 755 1
 CircuitBuildTimeBin 775 1
 CircuitBuildTimeBin 795 1
@@ -56,6 +57,7 @@ CircuitBuildTimeBin 1005 2
 CircuitBuildTimeBin 1025 1
 CircuitBuildTimeBin 1075 1
 CircuitBuildTimeBin 1145 2
+CircuitBuildTimeBin 1245 1
 CircuitBuildTimeBin 1335 1
 CircuitBuildTimeBin 1375 1
 CircuitBuildTimeBin 1495 1
@@ -68,6 +70,7 @@ CircuitBuildTimeBin 1815 1
 CircuitBuildTimeBin 1825 1
 CircuitBuildTimeBin 1885 2
 CircuitBuildTimeBin 2025 1
+CircuitBuildTimeBin 2045 1
 CircuitBuildTimeBin 2105 1
 CircuitBuildTimeBin 2515 1
 CircuitBuildTimeBin 2655 1
@@ -76,6 +79,7 @@ CircuitBuildTimeBin 2995 1
 CircuitBuildTimeBin 3005 1
 CircuitBuildTimeBin 3035 1
 CircuitBuildTimeBin 3045 1
+CircuitBuildTimeBin 3055 1
 CircuitBuildTimeBin 3625 1
 CircuitBuildTimeBin 3865 1
 CircuitBuildTimeBin 3905 4
@@ -85,8 +89,8 @@ CircuitBuildTimeBin 4125 1
 CircuitBuildTimeBin 4135 1
 CircuitBuildTimeBin 5325 1
 Dormant 0
-Guard in=default rsa_id=71A1DA0D554EC4107DD6ED7303D38DC9A9F8B241 nickname=chaoscode2 sampled_on=2024-10-16T03:26:47 sampled_idx=0 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-16T19:47:25 confirmed_idx=1 pb_use_attempts=31.000000 pb_use_successes=31.000000 pb_circ_attempts=89.000000 pb_circ_successes=87.000000 pb_successful_circuits_closed=87.000000
-Guard in=default rsa_id=C37F87C0125E26E6ACF54366FA2198209E856ABE nickname=pataky sampled_on=2024-10-11T11:51:29 sampled_idx=1 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-14T03:40:40 confirmed_idx=0 pb_use_attempts=31.000000 pb_use_successes=31.000000 pb_circ_attempts=76.000000 pb_circ_successes=75.000000 pb_successful_circuits_closed=75.000000 pb_timeouts=1.000000
+Guard in=default rsa_id=71A1DA0D554EC4107DD6ED7303D38DC9A9F8B241 nickname=chaoscode2 sampled_on=2024-10-16T03:26:47 sampled_idx=0 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-16T19:47:25 confirmed_idx=1 pb_use_attempts=32.000000 pb_use_successes=32.000000 pb_circ_attempts=97.000000 pb_circ_successes=95.000000 pb_successful_circuits_closed=95.000000
+Guard in=default rsa_id=C37F87C0125E26E6ACF54366FA2198209E856ABE nickname=pataky sampled_on=2024-10-11T11:51:29 sampled_idx=1 sampled_by=0.4.8.12 listed=1 confirmed_on=2024-10-14T03:40:40 confirmed_idx=0 pb_use_attempts=32.000000 pb_use_successes=32.000000 pb_circ_attempts=83.000000 pb_circ_successes=82.000000 pb_successful_circuits_closed=82.000000 pb_timeouts=1.000000
 Guard in=default rsa_id=1D6528AA190F17B2C055CBD042D672778A265661 nickname=Unnamed sampled_on=2024-10-11T22:38:33 sampled_idx=2 sampled_by=0.4.8.12 listed=1
 Guard in=default rsa_id=05C32C5EE14454E0C4CD81DAE0F3DC32F729DA4B nickname=TORtuga sampled_on=2024-10-19T14:20:18 sampled_idx=3 sampled_by=0.4.8.12 listed=1
 Guard in=default rsa_id=CA1684516B7FECF3DB76D43FD02F56D8B95E8A69 nickname=D4rkKn1gh7 sampled_on=2024-10-10T23:44:16 sampled_idx=4 sampled_by=0.4.8.12 listed=1
@@ -106,6 +110,6 @@ Guard in=default rsa_id=8BB55A3AFBB7E5D9EB83215DEC8F219E68DF9B6D nickname=PoloUn
 Guard in=default rsa_id=2FC28BE4F3949D8F7E347BB5495BFB0C93EB340A nickname=prsv sampled_on=2024-10-20T20:22:32 sampled_idx=18 sampled_by=0.4.8.12 listed=1
 Guard in=default rsa_id=2F5119F2099886176AFCBCE5E95053CE5C92661B nickname=Brutus sampled_on=2024-10-17T02:56:25 sampled_idx=19 sampled_by=0.4.8.12 listed=1
 Guard in=default rsa_id=0C36AE99B744E32088C9ED23D7A31F8D23AE1A58 nickname=lancelot sampled_on=2024-10-14T08:25:26 sampled_idx=20 sampled_by=0.4.8.12 listed=1
-LastWritten 2024-10-25 10:03:02
+LastWritten 2024-10-25 10:18:16
 TorVersion Tor 0.4.8.12 (git-2beaa7557c3c93ec)
-TotalBuildTimes 240
+TotalBuildTimes 261
