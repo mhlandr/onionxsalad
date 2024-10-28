@@ -18,34 +18,39 @@
     <div style="flex: 2; margin-right: 20px;">
         <form asp-action="Search" method="post" style="display: flex; flex-direction: column; align-items: center;">
             <div style="text-align: center;">
-                <input type="text" name="searchTerm" placeholder="Enter search term" required style="padding: 10px; margin-bottom: 10px; width: 300px;" />
+                <input type="text" asp-for="SearchTerm" placeholder="Enter search term" required style="padding: 10px; margin-bottom: 10px; width: 300px;" />
                 <button type="submit" style="padding: 10px 20px;">Search</button>
             </div>
         </form>
 
         <ul>
-            @if (Model != null && Model.Any())
+            @if (Model.IsSearchInitiated)
             {
-                @foreach (var result in Model)
+                if (Model.Results != null && Model.Results.Any())
                 {
-                    <li>
-                        <strong>@result["site_name"]</strong> - @result["category"]
-                        <br />
-                        <a href="@result["onion_url"]" target="_blank">@result["onion_url"]</a>
-                        <button type="button" onclick="copyToClipboard('@result["onion_url"]')">Copy URL</button>
-                        <button type="button" onclick="checkOnlineStatus('@result["onion_url"]', this)">Check if Online</button>
+                    @foreach (var result in Model.Results)
+                    {
+                        <li>
+                            <strong>@result.SiteName</strong> - @result.Category
+                            <br />
+                            <a href="@result.OnionUrl" target="_blank">@result.OnionUrl</a>
+                            <button type="button" onclick="copyToClipboard('@result.OnionUrl')">Copy URL</button>
+                            <button type="button" onclick="checkOnlineStatus('@result.OnionUrl', this)">Check if Online</button>
+                            <button type="button" onclick="captureScreenshot('@result.OnionUrl', this)">Capture Screenshot</button>
 
-                        <!-- New button for capturing the screenshot -->
-                        <button type="button" onclick="captureScreenshot('@result["onion_url"]', this)">Capture Screenshot</button>
-
-                        <span class="online-status"></span>
-                        <br /><br />
-                    </li>
+                            <span class="online-status"></span>
+                            <br /><br />
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li>No results found. Try again later.</li>
                 }
             }
-            else
+            else if (Model.SearchTerm != null)
             {
-                <li>  </li>
+                <li>Search initiated. Please wait for results.</li>
             }
         </ul>
     </div>
