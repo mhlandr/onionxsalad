@@ -7,78 +7,68 @@ using System.Collections.Concurrent;
 using System.Threading;
 using NuGet.Packaging.Licenses;
 
-public class HomeController : Controller
+
+
+[Route("api/[controller]")]
+public class SearchesController : ControllerBase
 {
     private readonly IMongoCollection<BsonDocument> _collection;
+    private static readonly ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
+    private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(5, 5);
+    private static readonly ConcurrentDictionary<string, bool> _processingRequests = new ConcurrentDictionary<string, bool>();
 
-    // Queue to hold search requests
-    private static ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
-
-    // Semaphore to limit concurrent requests
-    private static SemaphoreSlim _semaphore = new SemaphoreSlim(5, 5); // Allows n request to be processed at a time
-
-    private static ConcurrentDictionary<string, bool> _processingRequests = new ConcurrentDictionary<string, bool>(); // Thread-safe version
-
-    public HomeController(IMongoCollection<BsonDocument> collection)
+    public SearchesController(IMongoCollection<BsonDocument> collection)
     {
         _collection = collection;
     }
 
-    [HttpGet]
-    public IActionResult SearchPage()
-    {
-        return View();
-    }
-
-    [HttpGet]
-    public IActionResult SearchResults()
-    {
-        return View();
-    }
-
+    // Endpoint to initiate a search
     [HttpPost]
-    public async Task<IActionResult> Search(string searchTerm)
+    public async Task<IActionResult> InitiateSearch([FromBody] string searchTerm)
     {
         var scraper = new AhmiaScraperService(_collection);
 
         // Step 1: Fetch results from the database
         var existingResults = await scraper.GetResultsFromDbAsync(searchTerm);
 
-        // Step 2: Return the existing results immediately
-        ViewData["InitialResults"] = existingResults;
-        var viewResult = View("SearchResults", existingResults);
-
-        // Step 3: Add the search term to the queue for background processing
-        _ = Task.Run(async () =>
+        // Step 2: Return existing results if available
+        if (existingResults != null && existingResults.Any())
         {
-            try
-            {
-                await ProcessQueue(searchTerm);
-            }
-            catch (Exception ex)
-            {
-                // Log the error or handle it appropriately
-                Console.WriteLine($"Error in background task: {ex.Message}");
-            }
-        });
+            return Ok(new { message = "Results retrieved from cache", data = existingResults });
+        }
 
-        return viewResult;
+        // Step 3: Add search term to the queue for background processing
+        _ = Task.Run(async () => await ProcessQueue(searchTerm));
+
+        return Accepted(new { message = "Search initiated. Processing in the background." });
     }
 
-    // Queue processing logic
+    // Endpoint to retrieve search results
+    [HttpGet("{searchTerm}")]
+    public async Task<IActionResult> GetSearchResults(string searchTerm)
+    {
+        var scraper = new AhmiaScraperService(_collection);
+        var results = await scraper.GetResultsFromDbAsync(searchTerm);
+
+        if (results == null || !results.Any())
+            return NotFound(new { message = "No results found. Try again later." });
+
+        return Ok(results);
+    }
+
+    // Private queue processing logic
     private async Task ProcessQueue(string searchTerm)
     {
-        // Add the search term to the queue
         _searchQueue.Enqueue(searchTerm);
 
-        // Avoid multiple scrapes for the same term simultaneously
+        // Skip if another process is already handling this term
         if (_processingRequests.ContainsKey(searchTerm)) return;
 
         _processingRequests.TryAdd(searchTerm, true);
 
         try
         {
-            await _semaphore.WaitAsync(); // Ensure only one scrape operation at a time
+            await _semaphore.WaitAsync();
 
             while (_searchQueue.TryDequeue(out var termToProcess))
             {
@@ -89,7 +79,7 @@ public class HomeController : Controller
         finally
         {
             _processingRequests.TryRemove(searchTerm, out _);
-            _semaphore.Release(); // Allow the next item in the queue to process
+            _semaphore.Release();
         }
     }
 }
