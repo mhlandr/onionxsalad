@@ -4,7 +4,7 @@ async function captureScreenshot(url, screenshotPath) {
     const browser = await puppeteer.launch({
         headless: true,
         args: [
-            '--proxy-server=socks5://127.0.0.1:9050',
+            '--proxy-server=socks5://127.0.0.1:19050',
             '--no-sandbox'
         ]
     });

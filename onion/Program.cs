@@ -87,16 +87,6 @@ builder.Services.AddHttpClient("TorClient")
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-// Configure CORS policy
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSpecificOrigins", builder =>
-    {
-        builder.WithOrigins("https://example.com", "https://another-example.com") // Add allowed origins here
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-    });
-});
 
 // Register ScreenshotService as a scoped service
 builder.Services.AddScoped<ScreenshotService>();
