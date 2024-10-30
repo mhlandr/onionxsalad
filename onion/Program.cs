@@ -8,7 +8,7 @@ using System.Net.Http;
 using Knapcode.TorSharp;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.HttpOverrides;
-using onion.Services; // Added for forwarded headers
+using onion.Services.Screenshot; // Added for forwarded headers
 
 var builder = WebApplication.CreateBuilder(args);
 

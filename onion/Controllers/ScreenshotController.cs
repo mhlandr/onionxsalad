@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using onion.Services;
+using onion.Services.Screenshot;
 
 [ApiController]
 [Route("api/[controller]")]

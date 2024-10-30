@@ -1,7 +1,7 @@
 ﻿using onion.Models;
 using System.Collections.Concurrent;
 
-namespace onion.Services
+namespace onion.Services.Screenshot
 {
     public interface IQueueService
     {

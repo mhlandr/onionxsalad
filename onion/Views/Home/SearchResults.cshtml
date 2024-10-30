@@ -127,8 +127,8 @@
             const requestId = data.requestId;
 
             // Step 2: Poll for the status of the screenshot
-            const pollInterval = 5000; // Poll every 5 seconds
-            const maxAttempts = 12; // Maximum number of polling attempts (1 minute)
+            const pollInterval = 1000; // Poll every 1 second
+            const maxAttempts = 60; // Maximum number of polling attempts (1 minute)
             let attempts = 0;
 
             const imgElement = document.getElementById('screenshot-preview');
