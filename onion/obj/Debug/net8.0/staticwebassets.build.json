@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ii53fMImdu+jeDt1E+azBOoUQ2uH7NjNLeupgFOiH+c=",
+  "Hash": "WEmAwf9SbOITGiDbOqqKdy9IJ1dVfVa9AoNohUpdtDM=",
   "Source": "onion",
   "BasePath": "_content/onion",
   "Mode": "Default",
@@ -2561,6 +2561,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\screenshots\\screenshot_20241029183207.png"
+    },
+    {
+      "Identity": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241029183836.png",
+      "SourceId": "onion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\",
+      "BasePath": "_content/onion",
+      "RelativePath": "screenshots/screenshot_20241029183836.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\screenshots\\screenshot_20241029183836.png"
     },
     {
       "Identity": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",

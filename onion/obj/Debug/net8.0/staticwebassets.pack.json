@@ -293,6 +293,10 @@
       "PackagePath": "staticwebassets\\screenshots\\screenshot_20241029183207.png"
     },
     {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20241029183836.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20241029183836.png"
+    },
+    {
       "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
       "PackagePath": "staticwebassets\\scripts\\capture_screenshot.js"
     },

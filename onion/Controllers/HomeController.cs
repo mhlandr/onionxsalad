@@ -5,23 +5,28 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Threading;
-using NuGet.Packaging.Licenses;
+using System.Security.Claims; // For ClaimTypes
+using Microsoft.AspNetCore.Http; // For HttpContext
+using onion.Areas.Identity.Data; // Adjust namespace as per your project
+using onion.Models; // Adjust namespace to where SearchRecord is located
 
 public class HomeController : Controller
 {
     private readonly IMongoCollection<BsonDocument> _collection;
+    private readonly AuthSystemDbContex _dbContext;
 
     // Queue to hold search requests
     private static ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
 
     // Semaphore to limit concurrent requests
-    private static SemaphoreSlim _semaphore = new SemaphoreSlim(5, 5); // Allows n request to be processed at a time
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(5, 5); // Allows 5 requests to be processed at a time
 
     private static ConcurrentDictionary<string, bool> _processingRequests = new ConcurrentDictionary<string, bool>(); // Thread-safe version
 
-    public HomeController(IMongoCollection<BsonDocument> collection)
+    public HomeController(IMongoCollection<BsonDocument> collection, AuthSystemDbContex dbContext)
     {
         _collection = collection;
+        _dbContext = dbContext;
     }
 
     [HttpGet]
@@ -39,6 +44,26 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> Search(string searchTerm)
     {
+        // Save the search term, user ID, and IP address to the database
+        var userId = User.Identity.IsAuthenticated ? User.FindFirst(ClaimTypes.NameIdentifier)?.Value : null;
+        var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
+
+        // Handle possible null RemoteIpAddress (e.g., if behind a proxy)
+        if (string.IsNullOrEmpty(ipAddress) && HttpContext.Request.Headers.ContainsKey("X-Forwarded-For"))
+        {
+            ipAddress = HttpContext.Request.Headers["X-Forwarded-For"];
+        }
+
+        var searchRecord = new SearchRecord
+        {
+            SearchTerm = searchTerm,
+            UserId = userId,
+            IpAddress = ipAddress
+        };
+
+        _dbContext.SearchRecords.Add(searchRecord);
+        await _dbContext.SaveChangesAsync();
+
         var scraper = new AhmiaScraperService(_collection);
 
         // Step 1: Fetch results from the database
@@ -78,7 +103,7 @@ public class HomeController : Controller
 
         try
         {
-            await _semaphore.WaitAsync(); // Ensure only one scrape operation at a time
+            await _semaphore.WaitAsync(); // Ensure only a limited number of scrape operations at a time
 
             while (_searchQueue.TryDequeue(out var termToProcess))
             {

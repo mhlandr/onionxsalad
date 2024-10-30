@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using onion.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using onion.Areas.Identity.Data;
 namespace onion.Migrations
 {
     [DbContext(typeof(AuthSystemDbContex))]
-    partial class AuthSystemDbContexModelSnapshot : ModelSnapshot
+    [Migration("20241030142004_MakeUserIdNullableInSearchRecord")]
+    partial class MakeUserIdNullableInSearchRecord
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
