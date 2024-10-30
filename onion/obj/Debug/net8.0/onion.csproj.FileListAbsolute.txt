@@ -354,5 +354,4 @@ C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\runtimes\wi
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\obj\Debug\net8.0\onion.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\Knapcode.TorSharp.dll
 C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\System.ServiceModel.Syndication.dll
-C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\tor-tools\extracted\tor-win64-13.5.7\tor\pluggable_transports\pt_config.json
-C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\tor-tools\extracted\tor-win64-14.0\tor\pluggable_transports\pt_config.json
+C:\Users\mhlan\source\repos\onion\onionxsalad\onion\bin\Debug\net8.0\tor-tools\extracted\tor-win64-14.0.1\tor\pluggable_transports\pt_config.json
