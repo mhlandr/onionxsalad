@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Http;
 using Knapcode.TorSharp;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.HttpOverrides;
+using onion.Services; // Added for forwarded headers
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +16,12 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AuthSystemDbContexConnection")
     ?? throw new InvalidOperationException("Connection string 'AuthSystemDbContexConnection' not found.");
 
-builder.Services.AddDbContext<AuthSystemDbContex>(options =>
+builder.Services.AddDbContext<AuthSystemDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<AppUser>(options =>
     options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<AuthSystemDbContex>();
+    .AddEntityFrameworkStores<AuthSystemDbContext>();
 
 // MongoDB setup
 var connectionStringMongo = "mongodb://localhost:27017";
@@ -83,15 +85,36 @@ builder.Services.AddHttpClient("TorClient")
         client.Timeout = TimeSpan.FromMinutes(2);
     });
 
-// Register MVC
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+// Configure Forwarded Headers Middleware (for capturing real client IP)
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
 
+// Register the QueueService as a singleton
+builder.Services.AddSingleton<IQueueService, QueueService>();
 
-// Register ScreenshotService as a scoped service
-builder.Services.AddScoped<ScreenshotService>();
+// Register your existing ScreenshotService
+builder.Services.AddSingleton<ScreenshotService>();
+
+// Register the background service
+builder.Services.AddHostedService<ScreenshotBackgroundService>();
+
+// Register MVC (already registered above)
+// builder.Services.AddControllersWithViews();
+// builder.Services.AddRazorPages();
+
+// Register CORS policy if needed (uncomment and configure as necessary)
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowSpecificOrigins",
+//         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+// });
 
 var app = builder.Build();
+
+// Use forwarded headers middleware (must be before other middleware that uses forwarded headers)
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
@@ -104,9 +127,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Use CORS policy
-app.UseCors("AllowSpecificOrigins");
+// Use CORS policy (uncomment if you have configured CORS)
+// app.UseCors("AllowSpecificOrigins");
 
+// Use authentication and authorization
+app.UseAuthentication(); // Added authentication middleware
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "ScreenshotController",
-    "Method": "CaptureOnionScreenshot",
+    "Method": "EnqueueScreenshot",
     "RelativePath": "api/Screenshot/capture",
     "HttpMethod": "POST",
     "IsController": true,
@@ -10,6 +10,22 @@
       {
         "Name": "payload",
         "Type": "onion.Models.ScreenshotPayload",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ScreenshotController",
+    "Method": "GetScreenshotStatus",
+    "RelativePath": "api/Screenshot/status/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

@@ -6,19 +6,20 @@ using onion.Models;
 
 namespace onion.Areas.Identity.Data
 {
-    public class AuthSystemDbContex : IdentityDbContext<AppUser>
+    public class AuthSystemDbContext : IdentityDbContext<AppUser>
     {
-        public AuthSystemDbContex(DbContextOptions<AuthSystemDbContex> options)
+        public AuthSystemDbContext(DbContextOptions<AuthSystemDbContext> options)
             : base(options)
         {
         }
 
         public DbSet<SearchRecord> SearchRecords { get; set; }
+        public DbSet<ScreenshotRequestLog> ScreenshotRequestLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // You can customize the ASP.NET Identity model here if needed.
+            // Additional configurations if needed
         }
     }
 }

@@ -11,7 +11,7 @@ using onion.Areas.Identity.Data;
 
 namespace onion.Migrations
 {
-    [DbContext(typeof(AuthSystemDbContex))]
+    [DbContext(typeof(AuthSystemDbContext))]
     [Migration("20241030141744_AddSearchRecord")]
     partial class AddSearchRecord
     {

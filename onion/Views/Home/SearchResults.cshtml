@@ -111,25 +111,80 @@
             button.disabled = true;
             button.textContent = 'Capturing...';
 
+            // Step 1: Enqueue the screenshot request
             const response = await fetch('/api/screenshot/capture', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url: onionUrl })
             });
 
-            if (!response.ok) throw new Error('Failed to capture screenshot');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to enqueue screenshot request');
+            }
 
             const data = await response.json();
-            const imgElement = document.getElementById('screenshot-preview');
-            imgElement.src = data.path;  // Ensure the returned path is correct
-            imgElement.style.display = 'block';
+            const requestId = data.requestId;
 
-            button.textContent = 'Capture Screenshot';
+            // Step 2: Poll for the status of the screenshot
+            const pollInterval = 5000; // Poll every 5 seconds
+            const maxAttempts = 12; // Maximum number of polling attempts (1 minute)
+            let attempts = 0;
+
+            const imgElement = document.getElementById('screenshot-preview');
+            const statusCheck = setInterval(async () => {
+                attempts++;
+
+                try {
+                    // Fetch the status of the screenshot request
+                    const statusResponse = await fetch(`/api/screenshot/status/${requestId}`);
+
+                    if (!statusResponse.ok) {
+                        const errorData = await statusResponse.json();
+                        throw new Error(errorData.error || 'Failed to get screenshot status');
+                    }
+
+                    const statusData = await statusResponse.json();
+
+                    if (statusData.status === 'Completed') {
+                        // Screenshot is ready
+                        imgElement.src = statusData.screenshotPath; // Ensure the returned path is correct
+                        imgElement.style.display = 'block';
+                        button.textContent = 'Capture Screenshot';
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                    } else if (statusData.status === 'Failed') {
+                        // Screenshot capture failed
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                        button.textContent = 'Capture Screenshot';
+                        alert('Screenshot capture failed: ' + statusData.errorMessage);
+                    } else {
+                        // Still pending or processing, update button text
+                        button.textContent = `Capturing... (${attempts * pollInterval / 1000}s)`;
+                    }
+
+                    if (attempts >= maxAttempts) {
+                        // Max attempts reached
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                        button.textContent = 'Capture Screenshot';
+                        alert('Screenshot capture timed out. Please try again later.');
+                    }
+                } catch (pollError) {
+                    clearInterval(statusCheck);
+                    button.disabled = false;
+                    button.textContent = 'Capture Screenshot';
+                    console.error('Error while polling screenshot status:', pollError);
+                    alert('An error occurred while checking the screenshot status. Please try again.');
+                }
+            }, pollInterval);
         } catch (error) {
             console.error('Error capturing screenshot:', error);
-            alert('An error occurred while capturing the screenshot. Please try again.');
-        } finally {
+            alert('An error occurred while capturing the screenshot: ' + error.message);
             button.disabled = false;
+            button.textContent = 'Capture Screenshot';
         }
     }
+
 </script>

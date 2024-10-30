@@ -13,7 +13,7 @@ using onion.Models; // Adjust namespace to where SearchRecord is located
 public class HomeController : Controller
 {
     private readonly IMongoCollection<BsonDocument> _collection;
-    private readonly AuthSystemDbContex _dbContext;
+    private readonly AuthSystemDbContext _dbContext;
 
     // Queue to hold search requests
     private static ConcurrentQueue<string> _searchQueue = new ConcurrentQueue<string>();
@@ -23,7 +23,7 @@ public class HomeController : Controller
 
     private static ConcurrentDictionary<string, bool> _processingRequests = new ConcurrentDictionary<string, bool>(); // Thread-safe version
 
-    public HomeController(IMongoCollection<BsonDocument> collection, AuthSystemDbContex dbContext)
+    public HomeController(IMongoCollection<BsonDocument> collection, AuthSystemDbContext dbContext)
     {
         _collection = collection;
         _dbContext = dbContext;
