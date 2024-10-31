@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\home\\forensicstools.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\home\\forensicstools.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\controllers\\torcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\controllers\\torcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\models\\forensicstoolsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\models\\forensicstoolsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\home\\forensicstools.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\home\\forensicstools.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\home\\searchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,16 +23,24 @@
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\home\\searchpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\models\\searchrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\models\\searchrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\models\\onionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\models\\onionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\services\\ahmiascraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\services\\ahmiascraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,16 +51,24 @@
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\controllers\\screenshotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\services\\ahmiascraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\services\\ahmiascraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\services\\screenshot\\queueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\services\\screenshot\\queueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\controllers\\torcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\controllers\\torcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\models\\screenshot\\screenshotpayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\models\\screenshot\\screenshotpayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\services\\screenshot\\screenshotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\services\\screenshot\\screenshotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\services\\screenshot\\queueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\services\\screenshot\\queueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -77,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\migrations\\authsystemdbcontexmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\migrations\\authsystemdbcontexmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\migrations\\20241008155007_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,10 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|solutionrelative:onion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{425315B0-71FB-4EF7-913B-F362E7C6ACA6}|onion\\onion.csproj|c:\\users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\views\\home\\searchresults.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -285,7 +297,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -309,20 +321,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OnionRequest.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\OnionRequest.cs",
-              "RelativeDocumentMoniker": "onion\\Models\\OnionRequest.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\OnionRequest.cs",
-              "RelativeToolTip": "onion\\Models\\OnionRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "DocumentIndex": 1,
+              "Title": "ForensicsToolsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\ForensicsToolsViewModel.cs",
+              "RelativeDocumentMoniker": "onion\\Models\\ForensicsToolsViewModel.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\ForensicsToolsViewModel.cs",
+              "RelativeToolTip": "onion\\Models\\ForensicsToolsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T14:55:45.007Z",
+              "WhenOpened": "2024-10-31T09:04:04.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "forensicsTools.cshtml",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\forensicsTools.cshtml",
+              "RelativeDocumentMoniker": "onion\\Views\\Home\\forensicsTools.cshtml",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\forensicsTools.cshtml",
+              "RelativeToolTip": "onion\\Views\\Home\\forensicsTools.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T08:45:15.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "SearchPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchPage.cshtml",
+              "RelativeDocumentMoniker": "onion\\Views\\Home\\SearchPage.cshtml",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchPage.cshtml",
+              "RelativeToolTip": "onion\\Views\\Home\\SearchPage.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-26T09:17:46.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "onion\\Models\\ErrorViewModel.cs",
@@ -330,12 +366,107 @@
               "RelativeToolTip": "onion\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T11:40:14.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T11:40:14.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OnionRequest.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\OnionRequest.cs",
+              "RelativeDocumentMoniker": "onion\\Models\\OnionRequest.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\OnionRequest.cs",
+              "RelativeToolTip": "onion\\Models\\OnionRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:55:45.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SearchResults.cshtml",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchResults.cshtml",
+              "RelativeDocumentMoniker": "onion\\Views\\Home\\SearchResults.cshtml",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchResults.cshtml",
+              "RelativeToolTip": "onion\\Views\\Home\\SearchResults.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAL4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T13:02:18.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Program.cs",
+              "RelativeDocumentMoniker": "onion\\Program.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Program.cs",
+              "RelativeToolTip": "onion\\Program.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAGMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T12:39:01.248Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "onion\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "onion\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-26T11:39:25.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "onion\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "onion\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAwwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T11:37:59.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "forensicsTools.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\forensicsTools.cshtml.cs",
+              "RelativeDocumentMoniker": "onion\\Views\\Home\\forensicsTools.cshtml.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\forensicsTools.cshtml.cs",
+              "RelativeToolTip": "onion\\Views\\Home\\forensicsTools.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T08:46:19.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ScreenshotController.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\ScreenshotController.cs",
+              "RelativeDocumentMoniker": "onion\\Controllers\\ScreenshotController.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\ScreenshotController.cs",
+              "RelativeToolTip": "onion\\Controllers\\ScreenshotController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T08:28:23.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SearchRecord.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\SearchRecord.cs",
+              "RelativeDocumentMoniker": "onion\\Models\\SearchRecord.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\SearchRecord.cs",
+              "RelativeToolTip": "onion\\Models\\SearchRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T14:09:00.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AhmiaScraper.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Services\\AhmiaScraper.cs",
               "RelativeDocumentMoniker": "onion\\Services\\AhmiaScraper.cs",
@@ -343,64 +474,35 @@
               "RelativeToolTip": "onion\\Services\\AhmiaScraper.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAIwBwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T16:03:46.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-29T16:03:46.72Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "capture_screenshot.js",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
-              "RelativeDocumentMoniker": "onion\\wwwroot\\scripts\\capture_screenshot.js",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
-              "RelativeToolTip": "onion\\wwwroot\\scripts\\capture_screenshot.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-25T07:51:03.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SearchRecord.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\SearchRecord.cs",
-              "RelativeDocumentMoniker": "onion\\Models\\SearchRecord.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\SearchRecord.cs",
-              "RelativeToolTip": "onion\\Models\\SearchRecord.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T14:09:00.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "QueueService.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Services\\Screenshot\\QueueService.cs",
               "RelativeDocumentMoniker": "onion\\Services\\Screenshot\\QueueService.cs",
               "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Services\\Screenshot\\QueueService.cs",
               "RelativeToolTip": "onion\\Services\\Screenshot\\QueueService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T14:37:47.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T14:37:47.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ScreenshotPayload.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotPayload.cs",
-              "RelativeDocumentMoniker": "onion\\Models\\Screenshot\\ScreenshotPayload.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotPayload.cs",
-              "RelativeToolTip": "onion\\Models\\Screenshot\\ScreenshotPayload.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "DocumentIndex": 14,
+              "Title": "TorController.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\TorController.cs",
+              "RelativeDocumentMoniker": "onion\\Controllers\\TorController.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\TorController.cs",
+              "RelativeToolTip": "onion\\Controllers\\TorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T09:31:31.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T15:26:40.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "20241008155007_InitialCreate.Designer.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241008155007_InitialCreate.Designer.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241008155007_InitialCreate.Designer.cs",
@@ -412,72 +514,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TorController.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\TorController.cs",
-              "RelativeDocumentMoniker": "onion\\Controllers\\TorController.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\TorController.cs",
-              "RelativeToolTip": "onion\\Controllers\\TorController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAJAAAA",
+              "DocumentIndex": 15,
+              "Title": "ScreenshotPayload.cs",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotPayload.cs",
+              "RelativeDocumentMoniker": "onion\\Models\\Screenshot\\ScreenshotPayload.cs",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotPayload.cs",
+              "RelativeToolTip": "onion\\Models\\Screenshot\\ScreenshotPayload.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:26:40.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T09:31:31.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ScreenshotController.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\ScreenshotController.cs",
-              "RelativeDocumentMoniker": "onion\\Controllers\\ScreenshotController.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\ScreenshotController.cs",
-              "RelativeToolTip": "onion\\Controllers\\ScreenshotController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowBYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T08:28:23.145Z",
-              "EditorCaption": ""
+              "DocumentIndex": 17,
+              "Title": "capture_screenshot.js",
+              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
+              "RelativeDocumentMoniker": "onion\\wwwroot\\scripts\\capture_screenshot.js",
+              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
+              "RelativeToolTip": "onion\\wwwroot\\scripts\\capture_screenshot.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-25T07:51:03.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SearchResults.cshtml",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchResults.cshtml",
-              "RelativeDocumentMoniker": "onion\\Views\\Home\\SearchResults.cshtml",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchResults.cshtml",
-              "RelativeToolTip": "onion\\Views\\Home\\SearchResults.cshtml",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAqwGgAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-30T13:02:18.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SearchPage.cshtml",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchPage.cshtml",
-              "RelativeDocumentMoniker": "onion\\Views\\Home\\SearchPage.cshtml",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchPage.cshtml",
-              "RelativeToolTip": "onion\\Views\\Home\\SearchPage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-26T09:17:46.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "onion\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "onion\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T11:37:59.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "AuthSystemDbContexModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\AuthSystemDbContexModelSnapshot.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\AuthSystemDbContexModelSnapshot.cs",
@@ -489,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "ScreenshotBackgroundService.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Services\\Screenshot\\ScreenshotBackgroundService.cs",
               "RelativeDocumentMoniker": "onion\\Services\\Screenshot\\ScreenshotBackgroundService.cs",
@@ -497,12 +558,11 @@
               "RelativeToolTip": "onion\\Services\\Screenshot\\ScreenshotBackgroundService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T14:38:42.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T14:38:42.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "ScreenshotService.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Services\\Screenshot\\ScreenshotService.cs",
               "RelativeDocumentMoniker": "onion\\Services\\Screenshot\\ScreenshotService.cs",
@@ -510,12 +570,11 @@
               "RelativeToolTip": "onion\\Services\\Screenshot\\ScreenshotService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T07:51:40.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T07:51:40.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "ScreenshotRequest.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotRequest.cs",
               "RelativeDocumentMoniker": "onion\\Models\\Screenshot\\ScreenshotRequest.cs",
@@ -527,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "20241030160136_MakeUserIdNullable.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241030160136_MakeUserIdNullable.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241030160136_MakeUserIdNullable.cs",
@@ -539,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "ScreenshotRequestLog.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Models\\Screenshot\\ScreenshotRequestLog.cs",
               "RelativeDocumentMoniker": "onion\\Models\\Screenshot\\ScreenshotRequestLog.cs",
@@ -551,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "20241030142004_MakeUserIdNullableInSearchRecord.Designer.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241030142004_MakeUserIdNullableInSearchRecord.Designer.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241030142004_MakeUserIdNullableInSearchRecord.Designer.cs",
@@ -563,20 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Program.cs",
-              "RelativeDocumentMoniker": "onion\\Program.cs",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Program.cs",
-              "RelativeToolTip": "onion\\Program.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAAAGMAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T12:39:01.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "AuthSystemDbContext.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Data\\AuthSystemDbContext.cs",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Data\\AuthSystemDbContext.cs",
@@ -588,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "20241030142004_MakeUserIdNullableInSearchRecord.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241030142004_MakeUserIdNullableInSearchRecord.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241030142004_MakeUserIdNullableInSearchRecord.cs",
@@ -600,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\appsettings.json",
               "RelativeDocumentMoniker": "onion\\appsettings.json",
@@ -612,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "20241008155007_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241008155007_InitialCreate.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241008155007_InitialCreate.cs",
@@ -624,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Data\\AppUser.cs",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Data\\AppUser.cs",
@@ -636,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "20241030141744_AddSearchRecord.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241030141744_AddSearchRecord.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241030141744_AddSearchRecord.cs",
@@ -648,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "onion.csproj",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj",
               "RelativeDocumentMoniker": "onion\\onion.csproj",
@@ -660,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "SearchResults.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Home\\SearchResults.cshtml.cs",
               "RelativeDocumentMoniker": "onion\\Views\\Home\\SearchResults.cshtml.cs",
@@ -672,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "onion\\Views\\Shared\\Error.cshtml",
@@ -684,19 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "onion\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "onion\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-26T11:39:25.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "onion\\Views\\Shared\\_LoginPartial.cshtml",
@@ -708,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "onion\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -720,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "ExternalLogin.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
@@ -732,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\mhlan\\.nuget\\packages\\knapcode.torsharp\\2.15.0\\README.md",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\knapcode.torsharp\\2.15.0\\README.md",
@@ -744,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "onion\\ScaffoldingReadMe.txt",
@@ -756,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "_ManageNav.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
@@ -768,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "ChangePassword.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
@@ -780,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
@@ -792,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "ManageNavPages.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
@@ -804,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
@@ -816,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "EnableAuthenticator.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml",
@@ -828,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "ExternalLogins.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
@@ -840,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "ConfirmEmail.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
@@ -852,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "ExternalLogin.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml.cs",
@@ -864,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "_StatusMessage.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\_StatusMessage.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\_StatusMessage.cshtml",
@@ -876,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "DownloadPersonalData.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\DownloadPersonalData.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\DownloadPersonalData.cshtml",
@@ -888,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "Email.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
@@ -900,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
@@ -912,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -924,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Disable2fa.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\Disable2fa.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\Disable2fa.cshtml",
@@ -936,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "DeletePersonalData.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
@@ -948,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "RegisterConfirmation.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
@@ -960,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
@@ -972,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -984,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -996,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "_AuthLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\_AuthLayout.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\_AuthLayout.cshtml",
@@ -1008,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "PersonalData.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Manage\\PersonalData.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Manage\\PersonalData.cshtml",
@@ -1020,7 +1054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "ResendEmailConfirmation.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
@@ -1032,7 +1066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
@@ -1044,7 +1078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "Lockout.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\Lockout.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\Lockout.cshtml",
@@ -1056,7 +1090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "ResetPasswordConfirmation.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
@@ -1068,7 +1102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "20241005122912_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Migrations\\20241005122912_InitialCreate.cs",
               "RelativeDocumentMoniker": "onion\\Migrations\\20241005122912_InitialCreate.cs",
@@ -1080,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
@@ -1092,7 +1126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
@@ -1104,7 +1138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
@@ -1116,7 +1150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "onion\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
@@ -1128,7 +1162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "onion\\Properties\\launchSettings.json",
@@ -1140,7 +1174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "search.css",
               "DocumentMoniker": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\css\\Home\\search.css",
               "RelativeDocumentMoniker": "onion\\wwwroot\\css\\Home\\search.css",

@@ -30,6 +30,25 @@ public class HomeController : Controller
     }
 
     [HttpGet]
+    public IActionResult ForensicsTools()
+    {
+        var model = new ForensicsToolsViewModel
+        {
+            IsPost = false
+        };
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult ForensicsTools(ForensicsToolsViewModel model)
+    {
+        model.IsPost = true;
+        // Process the WebsiteUrl as needed
+
+        return View(model);
+    }
+
+    [HttpGet]
     public IActionResult SearchPage()
     {
         return View();

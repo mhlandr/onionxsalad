@@ -16,7 +16,6 @@ public class ScreenshotController : ControllerBase
     private readonly AuthSystemDbContext _dbContext;
     private readonly UserManager<AppUser> _userManager;
 
-    // Ensure there is only one constructor
     public ScreenshotController(
         IQueueService queueService,
         AuthSystemDbContext dbContext,

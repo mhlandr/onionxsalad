@@ -1,0 +1,179 @@
+﻿@model onion.Models.ForensicsToolsViewModel
+@{
+    ViewData["Title"] = "Forensics Tool";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Form for inputting the website URL -->
+<form method="post" asp-action="ForensicsTools">
+    @Html.AntiForgeryToken() <!-- Anti-forgery token for security -->
+    <div class="form-group">
+        <label asp-for="WebsiteUrl"></label>
+        <input asp-for="WebsiteUrl" class="form-control" placeholder="Enter website URL" required />
+        <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+</form>
+
+@if (Model.IsPost)
+{
+    <hr />
+    <h2>Analysis Results for @Model.WebsiteUrl</h2>
+
+    <!-- Feature Section: Check if Website is Online -->
+    <div class="feature-section">
+        <h3>Website Availability</h3>
+        <button type="button" class="btn btn-secondary" onclick="checkOnlineStatus('@Model.WebsiteUrl', this)">Check if Online</button>
+        <span class="online-status" style="margin-left:10px;"></span>
+    </div>
+
+    <!-- Feature Section: Capture Screenshot -->
+    <div class="feature-section" style="margin-top:20px;">
+        <h3>Website Screenshot</h3>
+        <button type="button" class="btn btn-secondary" onclick="captureScreenshot('@Model.WebsiteUrl', this)">Capture Screenshot</button>
+        <div id="screenshot-container" style="margin-top:10px;">
+            <img id="screenshot-preview" src="" alt="Screenshot" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd;">
+        </div>
+    </div>
+}
+
+<!-- JavaScript to Handle Feature Interactions -->
+<script>
+    // Retrieve the anti-forgery token from the hidden input
+    const antiforgeryToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+    /**
+     * Function to check if the website is online.
+     * Sends a POST request to the existing API endpoint.
+     */
+    function checkOnlineStatus(url, button) {
+        const apiUrl = '/Tor/CheckWebsiteStatus'; // Update if your endpoint differs
+
+        // Ensure the URL has a proper scheme
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+
+        // Update button state
+        button.disabled = true;
+        button.innerText = "Checking...";
+
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': antiforgeryToken
+            },
+            body: JSON.stringify({ onionUrl: url })
+        })
+            .then(response => response.json())
+            .then(data => {
+                const statusSpan = button.nextElementSibling;
+                if (data.isOnline) {
+                    statusSpan.textContent = "Online";
+                    statusSpan.style.color = "green";
+                } else {
+                    statusSpan.textContent = "Offline";
+                    statusSpan.style.color = "red";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while checking the website status.');
+            })
+            .finally(() => {
+                button.disabled = false;
+                button.innerText = "Check if Online";
+            });
+    }
+
+    /**
+     * Function to capture a screenshot of the website.
+     * Sends a POST request to enqueue the screenshot and polls for its completion.
+     */
+    async function captureScreenshot(url, button) {
+        const captureApiUrl = '/api/screenshot/capture'; // Update if your endpoint differs
+        const statusApiUrl = '/api/screenshot/status/';   // Update if your endpoint differs
+
+        try {
+            // Update button state
+            button.disabled = true;
+            button.textContent = 'Capturing...';
+
+            // Enqueue screenshot capture
+            const response = await fetch(captureApiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': antiforgeryToken
+                },
+                body: JSON.stringify({ url: url })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to enqueue screenshot request');
+            }
+
+            const data = await response.json();
+            const requestId = data.requestId;
+
+            // Polling logic to check screenshot status
+            const pollInterval = 1000; // 1 second
+            const maxAttempts = 60; // 1 minute
+            let attempts = 0;
+            const imgElement = document.getElementById('screenshot-preview');
+
+            const statusCheck = setInterval(async () => {
+                attempts++;
+
+                try {
+                    const statusResponse = await fetch(`${statusApiUrl}${requestId}`, {
+                        headers: { 'RequestVerificationToken': antiforgeryToken }
+                    });
+
+                    if (!statusResponse.ok) {
+                        const errorData = await statusResponse.json();
+                        throw new Error(errorData.error || 'Failed to get screenshot status');
+                    }
+
+                    const statusData = await statusResponse.json();
+
+                    if (statusData.status === 'Completed') {
+                        imgElement.src = statusData.screenshotPath;
+                        imgElement.style.display = 'block';
+                        button.textContent = 'Capture Screenshot';
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                    } else if (statusData.status === 'Failed') {
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                        button.textContent = 'Capture Screenshot';
+                        alert('Screenshot capture failed: ' + statusData.errorMessage);
+                    } else {
+                        button.textContent = `Capturing... (${attempts}s)`;
+                    }
+
+                    if (attempts >= maxAttempts) {
+                        clearInterval(statusCheck);
+                        button.disabled = false;
+                        button.textContent = 'Capture Screenshot';
+                        alert('Screenshot capture timed out. Please try again later.');
+                    }
+                } catch (pollError) {
+                    clearInterval(statusCheck);
+                    button.disabled = false;
+                    button.textContent = 'Capture Screenshot';
+                    console.error('Error while polling screenshot status:', pollError);
+                    alert('An error occurred while checking the screenshot status. Please try again.');
+                }
+            }, pollInterval);
+        } catch (error) {
+            console.error('Error capturing screenshot:', error);
+            alert('An error occurred while capturing the screenshot: ' + error.message);
+            button.disabled = false;
+            button.textContent = 'Capture Screenshot';
+        }
+    }
+</script>
