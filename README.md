@@ -10,5 +10,7 @@ Work in Progress
 Other features to be implemented:
 
 Link Saving: Add functionality to save links, along with comments and images related to those links.
+
 Admin Panel: A panel where all searches are displayed to the admin.
+
 Forensics Page: A page where users can download a website and examine image metadata for additional information.
