@@ -3,7 +3,8 @@
 When a search is made, the NoSQL database is queried for the search term, and any relevant results are returned to the user. Following this, a request is sent to Ahmia to scrape results for the search term. All results are checked against the database, and any new websites found are stored.
 
 The project uses the TorSharp component to route traffic through the Tor network, allowing users to check if a website is online. A queue is implemented to manage website checks when multiple requests are made. A logging system is also in place to store all user requests in an SQL database.
-![userRequestSQL](https://github.com/user-attachments/assets/e4b360fa-f2c6-4741-a189-13630dbc7609)
+
+![userScreenshotSQL](https://github.com/user-attachments/assets/908a9db2-e1d4-484c-b6d0-4399a0febd84)
 
 
 For taking screenshots, a Node.js module called "Puppeteer" is used to capture images of the websites, which are then sent back to the user. A logging system is also implemented, which acts as a queue in SQL where the status and details about each request are displayed.
