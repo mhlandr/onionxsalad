@@ -13,6 +13,7 @@ For taking screenshots, a Node.js module called "Puppeteer" is used to capture i
 
 
 Work in Progress
+
 Other features to be implemented:
 
 Link Saving: Add functionality to save links, along with comments and images related to those links.
