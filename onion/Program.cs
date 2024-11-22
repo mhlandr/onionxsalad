@@ -8,7 +8,8 @@ using System.Net.Http;
 using Knapcode.TorSharp;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.HttpOverrides;
-using onion.Services.Screenshot; // Added for forwarded headers
+using onion.Services.Screenshot;
+using onion.Services; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,6 +70,19 @@ builder.Services.AddSingleton(provider =>
     }
 });
 
+//Image Forensics Service
+builder.Services.AddTransient<IImageProcessingService, ImageProcessingService>();
+builder.Services.AddHttpClient();
+
+// Register HttpClient with configuration
+builder.Services.AddHttpClient<IImageProcessingService, ImageProcessingService>(client =>
+{
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+                                                    "AppleWebKit/537.36 (KHTML, like Gecko) " +
+                                                    "Chrome/58.0.3029.110 Safari/537.3");
+});
+
+
 // Register HttpClient that uses the Tor proxy globally
 builder.Services.AddHttpClient("TorClient")
     .ConfigurePrimaryHttpMessageHandler(() =>
@@ -100,16 +114,6 @@ builder.Services.AddSingleton<ScreenshotService>();
 // Register the background service
 builder.Services.AddHostedService<ScreenshotBackgroundService>();
 
-// Register MVC (already registered above)
-// builder.Services.AddControllersWithViews();
-// builder.Services.AddRazorPages();
-
-// Register CORS policy if needed (uncomment and configure as necessary)
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowSpecificOrigins",
-//         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-// });
 
 var app = builder.Build();
 
@@ -123,12 +127,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStaticFiles(); 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Use CORS policy (uncomment if you have configured CORS)
-// app.UseCors("AllowSpecificOrigins");
 
 // Use authentication and authorization
 app.UseAuthentication(); // Added authentication middleware

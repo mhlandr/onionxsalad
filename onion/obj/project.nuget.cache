@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Zor4z3kgabAvM20D5mn73eiqHGEH4U6hbkvEOkZGGY5AQAO9O5QL9Vrhj+57LNdWH84jc0mG7Ii5hJcCLsA7uw==",
+  "dgSpecHash": "D14mDI9xQX0JDlxAIPSslqkvXVLpQSFX7WHBtSSSWXZ5vdxrH4sQR2xGI6nIVi7E3muNGOTiiB4fCsXnHE/Mwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\onion.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\mhlan\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\knapcode.torsharp\\2.15.0\\knapcode.torsharp.2.15.0.nupkg.sha512",
+    "C:\\Users\\mhlan\\.nuget\\packages\\metadataextractor\\2.8.1\\metadataextractor.2.8.1.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.8\\microsoft.aspnetcore.cryptography.internal.8.0.8.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.8\\microsoft.aspnetcore.cryptography.keyderivation.8.0.8.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\8.0.8\\microsoft.aspnetcore.identity.entityframeworkcore.8.0.8.nupkg.sha512",
@@ -185,6 +186,7 @@
     "C:\\Users\\mhlan\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\mhlan\\.nuget\\packages\\xmpcore\\6.1.10.1\\xmpcore.6.1.10.1.nupkg.sha512",
     "C:\\Users\\mhlan\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": []

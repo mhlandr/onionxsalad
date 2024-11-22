@@ -1,0 +1,40 @@
+﻿@model List<onion.Models.ImageData>
+
+@if (Model == null || !Model.Any())
+{
+    <p class="text-danger">No analysis results found or an error occurred.</p>
+}
+else
+{
+    <h3>Image Metadata Analysis</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Metadata</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var image in Model)
+            {
+                <tr>
+                    <td>
+                        @{
+                            string imageUrl = Url.Content($"~/downloaded_website/images/{image.LocalFileName}");
+                        }
+                        <img src="@imageUrl" alt="Image" width="200" />
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach (var meta in image.Metadata)
+                            {
+                                <li><strong>@meta.Key:</strong> @meta.Value</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -19,7 +19,7 @@ public class ScreenshotService
         string baseDirectory = @"C:\Users\mhlan\source\repos\onion\onionxsalad\onion";
 
         // Paths
-        string nodeScriptPath = Path.Combine(baseDirectory, "wwwroot", "scripts", "capture_screenshot.js");  // Path to your Node.js script
+        string nodeScriptPath = Path.Combine(baseDirectory, "wwwroot", "scripts", "capture_screenshot.js");  // Path to Node.js script
         string screenshotDirectory = Path.Combine(baseDirectory, "wwwroot", "screenshots");  // Directory to save screenshots
         string screenshotFileName = $"screenshot_{DateTime.Now:yyyyMMddHHmmss}.png";
         string screenshotFullPath = Path.Combine(screenshotDirectory, screenshotFileName);
@@ -41,7 +41,7 @@ public class ScreenshotService
             CreateNoWindow = true
         };
 
-        // Log the full paths and URLs
+        // Log full paths and URLs
         Console.WriteLine($"Node.js executable path: {startInfo.FileName}");
         Console.WriteLine($"Node.js script path: {nodeScriptPath}");
         Console.WriteLine($"URL to capture: {url}");

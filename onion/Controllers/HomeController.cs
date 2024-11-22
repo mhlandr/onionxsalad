@@ -43,7 +43,6 @@ public class HomeController : Controller
     public IActionResult ForensicsTools(ForensicsToolsViewModel model)
     {
         model.IsPost = true;
-        // Process the WebsiteUrl as needed
 
         return View(model);
     }
@@ -67,7 +66,7 @@ public class HomeController : Controller
         var userId = User.Identity.IsAuthenticated ? User.FindFirst(ClaimTypes.NameIdentifier)?.Value : null;
         var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
 
-        // Handle possible null RemoteIpAddress (e.g., if behind a proxy)
+        // Handle possible null RemoteIpAddress 
         if (string.IsNullOrEmpty(ipAddress) && HttpContext.Request.Headers.ContainsKey("X-Forwarded-For"))
         {
             ipAddress = HttpContext.Request.Headers["X-Forwarded-For"];

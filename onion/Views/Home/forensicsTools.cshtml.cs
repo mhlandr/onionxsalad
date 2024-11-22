@@ -17,7 +17,6 @@ namespace onion.Views.Home
         public void OnPostSubmit()
         {
             IsPost = true;
-            // You can add preliminary processing here if needed
         }
     }
 }

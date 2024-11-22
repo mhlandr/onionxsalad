@@ -10,6 +10,7 @@
         "dependencies": {
           "HtmlAgilityPack": "1.11.66",
           "Knapcode.TorSharp": "2.15.0",
+          "MetadataExtractor": "2.8.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.AspNetCore.Identity.UI": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
@@ -642,6 +643,18 @@
           "lib/netstandard2.0/Knapcode.TorSharp.dll": {
             "assemblyVersion": "2.15.0.0",
             "fileVersion": "2.15.0.0"
+          }
+        }
+      },
+      "MetadataExtractor/2.8.1": {
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "6.0.0",
+          "XmpCore": "6.1.10.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MetadataExtractor.dll": {
+            "assemblyVersion": "2.8.1.0",
+            "fileVersion": "2.8.1.0"
           }
         }
       },
@@ -2119,6 +2132,14 @@
           }
         }
       },
+      "XmpCore/6.1.10.1": {
+        "runtime": {
+          "lib/netstandard2.0/XmpCore.dll": {
+            "assemblyVersion": "6.1.10.1",
+            "fileVersion": "6.1.10.1"
+          }
+        }
+      },
       "ZstdSharp.Port/0.7.3": {
         "runtime": {
           "lib/net7.0/ZstdSharp.dll": {
@@ -2533,6 +2554,13 @@
       "sha512": "sha512-uFIymeYyF2HZ/9nhmouwg42e/ya5Qxqwzx+xo0/poB50DUIapDu+rtFu8eiig9jc0ppeQSM9abjZxU5C9duR9g==",
       "path": "knapcode.torsharp/2.15.0",
       "hashPath": "knapcode.torsharp.2.15.0.nupkg.sha512"
+    },
+    "MetadataExtractor/2.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5VFc1urVZiIjB6zZ4nUkqDJntGPGPgPIrSqRtkAZ1AFDKHmxbRSHL3zZi9qMd8JYtOu/T8d5rZ7740jj/+dHOg==",
+      "path": "metadataextractor/2.8.1",
+      "hashPath": "metadataextractor.2.8.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.8": {
       "type": "package",
@@ -3401,6 +3429,13 @@
       "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
+    },
+    "XmpCore/6.1.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Tp2/e39e7z8hLtS4TXt0FNNZHbf5yNFfHS0/59soXlgOzZlyRZivvzWpvujyaWkTWWgecp/1nHxkuc5vntn7A==",
+      "path": "xmpcore/6.1.10.1",
+      "hashPath": "xmpcore.6.1.10.1.nupkg.sha512"
     },
     "ZstdSharp.Port/0.7.3": {
       "type": "package",

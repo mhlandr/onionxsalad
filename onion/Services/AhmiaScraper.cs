@@ -20,11 +20,11 @@ public class AhmiaScraperService
     {
         if (Uri.TryCreate(url, UriKind.Absolute, out var uri))
         {
-            return uri.Host;  // Return the host part if the URL is valid
+            return uri.Host;  
         }
         else
         {
-            return url; // If the URL is invalid, return it as-is
+            return url; 
         }
     }
 

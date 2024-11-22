@@ -50,8 +50,7 @@ public class ScreenshotController : ControllerBase
                 RequestedAt = DateTime.UtcNow,
                 UserId = userId,
                 IPAddress = ipAddress,
-                Status = "Pending" // Set initial status
-                                   // ErrorMessage is left as null
+                Status = "Pending" 
             };
 
             _dbContext.ScreenshotRequestLogs.Add(logEntry);

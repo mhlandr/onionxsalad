@@ -715,6 +715,23 @@
           }
         }
       },
+      "MetadataExtractor/2.8.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.1",
+          "XmpCore": "6.1.10.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/MetadataExtractor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MetadataExtractor.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.8": {
         "type": "package",
         "compile": {
@@ -3014,7 +3031,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -3134,6 +3151,19 @@
           "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "XmpCore/6.1.10.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/XmpCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/XmpCore.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4078,6 +4108,27 @@
         "lib/net472/Knapcode.TorSharp.xml",
         "lib/netstandard2.0/Knapcode.TorSharp.dll",
         "lib/netstandard2.0/Knapcode.TorSharp.xml"
+      ]
+    },
+    "MetadataExtractor/2.8.1": {
+      "sha512": "5VFc1urVZiIjB6zZ4nUkqDJntGPGPgPIrSqRtkAZ1AFDKHmxbRSHL3zZi9qMd8JYtOu/T8d5rZ7740jj/+dHOg==",
+      "type": "package",
+      "path": "metadataextractor/2.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net35/MetadataExtractor.dll",
+        "lib/net35/MetadataExtractor.xml",
+        "lib/net45/MetadataExtractor.dll",
+        "lib/net45/MetadataExtractor.xml",
+        "lib/netstandard1.3/MetadataExtractor.dll",
+        "lib/netstandard1.3/MetadataExtractor.xml",
+        "lib/netstandard2.0/MetadataExtractor.dll",
+        "lib/netstandard2.0/MetadataExtractor.xml",
+        "metadata-extractor-logo-128.png",
+        "metadataextractor.2.8.1.nupkg.sha512",
+        "metadataextractor.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.8": {
@@ -8741,6 +8792,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "XmpCore/6.1.10.1": {
+      "sha512": "/Tp2/e39e7z8hLtS4TXt0FNNZHbf5yNFfHS0/59soXlgOzZlyRZivvzWpvujyaWkTWWgecp/1nHxkuc5vntn7A==",
+      "type": "package",
+      "path": "xmpcore/6.1.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/XmpCore.dll",
+        "lib/net35/XmpCore.xml",
+        "lib/netstandard1.0/XmpCore.dll",
+        "lib/netstandard1.0/XmpCore.xml",
+        "lib/netstandard2.0/XmpCore.dll",
+        "lib/netstandard2.0/XmpCore.xml",
+        "xmpcore.6.1.10.1.nupkg.sha512",
+        "xmpcore.nuspec"
+      ]
+    },
     "ZstdSharp.Port/0.7.3": {
       "sha512": "U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
       "type": "package",
@@ -8764,6 +8832,7 @@
     "net8.0": [
       "HtmlAgilityPack >= 1.11.66",
       "Knapcode.TorSharp >= 2.15.0",
+      "MetadataExtractor >= 2.8.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
@@ -8828,6 +8897,10 @@
           "Knapcode.TorSharp": {
             "target": "Package",
             "version": "[2.15.0, )"
+          },
+          "MetadataExtractor": {
+            "target": "Package",
+            "version": "[2.8.1, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
