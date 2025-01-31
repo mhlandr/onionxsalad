@@ -5,129 +5,135 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<!-- Form for inputting the website URL -->
-<form method="post" asp-action="ForensicsTools">
-    @Html.AntiForgeryToken() <!-- Anti-forgery token for security -->
+<!--
+    Form for inputting the website URL.
+    This is your original post form, still intact.
+-->
+<form method="post" asp-action="Index" asp-controller="ForensicsTools">
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <label asp-for="WebsiteUrl"></label>
-        <input asp-for="WebsiteUrl" class="form-control" placeholder="Enter website URL" required />
+        <input asp-for="WebsiteUrl" id="websiteUrlInput" class="form-control" placeholder="Enter website URL" required />
         <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Analyze</button>
 </form>
 
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger">
-        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-        {
-            <p>@error.ErrorMessage</p>
-        }
+<!-- Feature Section: Check if Website is Online -->
+<div class="feature-section">
+    <h3>Website Availability</h3>
+    <button type="button" class="btn btn-secondary" onclick="checkOnlineStatus('@Model.WebsiteUrl', this)">Check if Online</button>
+    <span class="online-status" style="margin-left:10px;"></span>
+</div>
+
+<!-- Feature Section: Capture Screenshot -->
+<div class="feature-section" style="margin-top:20px;">
+    <h3>Website Screenshot</h3>
+    <button type="button" class="btn btn-secondary" onclick="captureScreenshot('@Model.WebsiteUrl', this)">Capture Screenshot</button>
+    <div id="screenshot-container" style="margin-top:10px;">
+        <img id="screenshot-preview" src="" alt="Screenshot" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd;">
     </div>
-}
+</div>
+<!--
+    New Feature Section: Analyze with AI
+    Visible anytime, but it uses the URL from the same input box.
+-->
+<div class="feature-section" style="margin-top:20px;">
+    <h3>AI Analysis of Website Source</h3>
+    <button type="button" class="btn btn-secondary" onclick="analyzeWithAI()">Analyze with AI</button>
+    <div id="aiAnalysisResult" style="margin-top:10px; white-space: pre-wrap;"></div>
+</div>
 
-@if (Model.IsPost)
-{
-    <hr />
-    <h2>Analysis Results for @Model.WebsiteUrl</h2>
-
-    <!-- Feature Section: Check if Website is Online -->
-    <div class="feature-section">
-        <h3>Website Availability</h3>
-        <button type="button" class="btn btn-secondary" onclick="checkOnlineStatus('@Model.WebsiteUrl', this)">Check if Online</button>
-        <span class="online-status" style="margin-left:10px;"></span>
-    </div>
-
-    <!-- Feature Section: Capture Screenshot -->
-    <div class="feature-section" style="margin-top:20px;">
-        <h3>Website Screenshot</h3>
-        <button type="button" class="btn btn-secondary" onclick="captureScreenshot('@Model.WebsiteUrl', this)">Capture Screenshot</button>
-        <div id="screenshot-container" style="margin-top:10px;">
-            <img id="screenshot-preview" src="" alt="Screenshot" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd;">
-        </div>
-    </div>
-
-    <!-- Display the image analysis results -->
-    @if (Model.AnalyzedImages != null && Model.AnalyzedImages.Any())
-    {
-        <h3>Image Metadata Analysis</h3>
-
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Metadata</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var image in Model.AnalyzedImages)
-                {
-                    <tr>
-                        <td>
-                            @{
-                                string imageUrl = Url.Content($"~/downloaded_website/images/{image.LocalFileName}");
-                            }
-                            <img src="@imageUrl" alt="Image" width="200" />
-                        </td>
-                        <td>
-                            <ul>
-                                @foreach (var meta in image.Metadata)
-                                {
-                                    <li><strong>@meta.Key:</strong> @meta.Value</li>
-                                }
-                            </ul>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <p>No images were found or an error occurred during analysis.</p>
-    }
-}
 
 @section Scripts {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+   
     <!-- JavaScript to Handle Feature Interactions -->
     <script>
-        function analyzeImages() {
-            var websiteUrl = $('#websiteUrl').val();
-
-            if (!websiteUrl) {
-                alert("Please enter a website URL.");
-                return;
-            }
-
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("AnalyzeImages", "ForensicsTools")',
-                data: {
-                    websiteUrl: websiteUrl,
-                    __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
-                },
-                success: function (response) {
-                    if (response.success) {
-                        $('#image-analysis-results').html(response.html);
-                    } else {
-                        alert(response.message);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    alert("An error occurred while analyzing images.");
-                }
-            });
-        }
-
+ 
         // Retrieve the anti-forgery token from the hidden input
         const antiforgeryToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
-        /**
-         * Function to check if the website is online.
-         * Sends a POST request to the existing API endpoint.
-         */
+        async function analyzeWithAI() {
+            const url = document.getElementById('websiteUrlInput').value;
+            if (!url) {
+                alert("Please enter a valid URL first.");
+                return;
+            }
+
+            try {
+                // Use a CORS proxy to fetch the website's HTML
+                const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
+                const websiteResponse = await fetch(proxyUrl);
+
+                if (!websiteResponse.ok) {
+                    throw new Error(`Failed to fetch website: ${websiteResponse.statusText}`);
+                }
+
+                const websiteData = await websiteResponse.json();
+                const rawHtml = websiteData.contents;
+
+                // Extract relevant parts of the HTML (meta description + main body text)
+                const cleanedHtml = extractRelevantHTML(rawHtml);
+
+                // Construct AI request
+                const body = {
+                    model: "Orenguteng/Llama-3.1-8B-Lexi-Uncensored_V2_Q5.gguf",
+                    messages: [
+                        { "role": "system", "content": "Provide a 2 paragraph description of the website. NO CODE DESCRIPTION" },
+                        { "role": "user", "content": `Here is the extracted content of the website:\n\n${cleanedHtml}` }
+                    ],
+                    temperature: 0.7,
+                    max_tokens: 2048, // Increased max tokens
+                    stream: false
+                };
+
+                // Send the AI request
+                const response = await fetch('http://localhost:1234/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const aiResponse = data.choices?.[0]?.message?.content || "No response received.";
+
+                document.getElementById('aiAnalysisResult').textContent = aiResponse;
+            } catch (err) {
+                console.error(err);
+                document.getElementById('aiAnalysisResult').textContent = "Error: " + err.message;
+            }
+        }
+
+        // Function to extract important text from HTML
+        function extractRelevantHTML(html) {
+            // Extract meta description
+            const metaMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i);
+            const metaDescription = metaMatch ? metaMatch[1] : "No meta description found.";
+
+            // Extract main body content
+            const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+            let bodyContent = bodyMatch ? bodyMatch[1] : "";
+
+            // Remove script, style, and HTML tags
+            bodyContent = bodyContent.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove scripts
+                .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')   // Remove styles
+                .replace(/<[^>]+>/g, '')                          // Remove remaining HTML tags
+                .trim();
+
+            return `Meta Description: ${metaDescription}\n\nMain Content: ${bodyContent.substring(0, 2000)}`; // Limit text to 2000 chars
+        }
+
+
+
+
         function checkOnlineStatus(url, button) {
             const apiUrl = '/Tor/CheckWebsiteStatus'; // Update if your endpoint differs
 
@@ -169,10 +175,7 @@
                 });
         }
 
-        /**
-         * Function to capture a screenshot of the website.
-         * Sends a POST request to enqueue the screenshot and polls for its completion.
-         */
+
         async function captureScreenshot(url, button) {
             const captureApiUrl = '/api/screenshot/capture'; // Update if your endpoint differs
             const statusApiUrl = '/api/screenshot/status/';   // Update if your endpoint differs

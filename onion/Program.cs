@@ -114,7 +114,16 @@ builder.Services.AddSingleton<ScreenshotService>();
 // Register the background service
 builder.Services.AddHostedService<ScreenshotBackgroundService>();
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policyBuilder =>
+    {
+        policyBuilder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 var app = builder.Build();
 
 // Use forwarded headers middleware (must be before other middleware that uses forwarded headers)
@@ -133,6 +142,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseCors("AllowAll");
 
 // Use authentication and authorization
 app.UseAuthentication(); // Added authentication middleware

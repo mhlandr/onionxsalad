@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "onion\\onion.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "LLamaSharp-master\\LLama.WebAPI\\LLama.WebAPI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
