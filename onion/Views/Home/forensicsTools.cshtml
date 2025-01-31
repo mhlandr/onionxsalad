@@ -62,7 +62,7 @@
             }
 
             try {
-                // Use a CORS proxy to fetch the website's HTML
+                // Use a CORS proxy to fetch the website's full HTML
                 const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
                 const websiteResponse = await fetch(proxyUrl);
 
@@ -71,20 +71,17 @@
                 }
 
                 const websiteData = await websiteResponse.json();
-                const rawHtml = websiteData.contents;
-
-                // Extract relevant parts of the HTML (meta description + main body text)
-                const cleanedHtml = extractRelevantHTML(rawHtml);
+                const rawHtml = websiteData.contents; // Keep full HTML without filtering
 
                 // Construct AI request
                 const body = {
                     model: "Orenguteng/Llama-3.1-8B-Lexi-Uncensored_V2_Q5.gguf",
                     messages: [
-                        { "role": "system", "content": "Provide a 2 paragraph description of the website. NO CODE DESCRIPTION" },
-                        { "role": "user", "content": `Here is the extracted content of the website:\n\n${cleanedHtml}` }
+                        { "role": "system", "content": "Make me a description of the website. Answer in english." },
+                        { "role": "user", "content": `Here is the full content of the website:\n\n${rawHtml}` } // Use full HTML
                     ],
                     temperature: 0.7,
-                    max_tokens: 2048, // Increased max tokens
+                    max_tokens: 2048,
                     stream: false
                 };
 
@@ -103,7 +100,10 @@
                 }
 
                 const data = await response.json();
-                const aiResponse = data.choices?.[0]?.message?.content || "No response received.";
+                let aiResponse = data.choices?.[0]?.message?.content || "No response received.";
+
+                // Remove <think> and </think> along with content inside
+                aiResponse = aiResponse.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
                 document.getElementById('aiAnalysisResult').textContent = aiResponse;
             } catch (err) {
@@ -112,24 +112,7 @@
             }
         }
 
-        // Function to extract important text from HTML
-        function extractRelevantHTML(html) {
-            // Extract meta description
-            const metaMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i);
-            const metaDescription = metaMatch ? metaMatch[1] : "No meta description found.";
 
-            // Extract main body content
-            const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-            let bodyContent = bodyMatch ? bodyMatch[1] : "";
-
-            // Remove script, style, and HTML tags
-            bodyContent = bodyContent.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove scripts
-                .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')   // Remove styles
-                .replace(/<[^>]+>/g, '')                          // Remove remaining HTML tags
-                .trim();
-
-            return `Meta Description: ${metaDescription}\n\nMain Content: ${bodyContent.substring(0, 2000)}`; // Limit text to 2000 chars
-        }
 
 
 
