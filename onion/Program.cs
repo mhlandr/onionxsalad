@@ -70,17 +70,6 @@ builder.Services.AddSingleton(provider =>
     }
 });
 
-//Image Forensics Service
-builder.Services.AddTransient<IImageProcessingService, ImageProcessingService>();
-builder.Services.AddHttpClient();
-
-// Register HttpClient with configuration
-builder.Services.AddHttpClient<IImageProcessingService, ImageProcessingService>(client =>
-{
-    client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
-                                                    "AppleWebKit/537.36 (KHTML, like Gecko) " +
-                                                    "Chrome/58.0.3029.110 Safari/537.3");
-});
 
 
 // Register HttpClient that uses the Tor proxy globally

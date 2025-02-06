@@ -8,7 +8,6 @@ namespace onion.Models
         [Required]
         public string? TargetUrl { get; set; }
         public string WebsiteUrl { get; set; }
-        public List<ImageData> AnalyzedImages { get; set; }
         public bool IsPost { get; set; }
     }
 }
