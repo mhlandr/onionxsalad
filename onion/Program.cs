@@ -124,6 +124,9 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
+
+
+
 var app = builder.Build();
 
 // Use forwarded headers middleware (must be before other middleware that uses forwarded headers)
@@ -144,10 +147,12 @@ app.UseRouting();
 
 app.UseCors("AllowAll");
 
+
+
 // Use authentication and authorization
 app.UseAuthentication(); // Added authentication middleware
 app.UseAuthorization();
-
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=SearchResults}/{id?}");

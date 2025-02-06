@@ -1,22 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc;
 
-namespace onion.Views.Home
+namespace onion.Pages
 {
     public class ForensicsToolsModel : PageModel
     {
-        [BindProperty]
-        public string WebsiteUrl { get; set; }
-        public bool IsPost { get; set; }
-
         public void OnGet()
         {
-            IsPost = false;
-        }
-
-        public void OnPostSubmit()
-        {
-            IsPost = true;
+            // Minimal or no logic here if everything is in the .cshtml
         }
     }
 }

@@ -29,15 +29,12 @@ public class HomeController : Controller
         _dbContext = dbContext;
     }
 
-    [HttpGet]
     public IActionResult ForensicsTools()
     {
-        var model = new ForensicsToolsViewModel
-        {
-            IsPost = false
-        };
+        var model = new ForensicsToolsViewModel();
         return View(model);
     }
+
 
     [HttpPost]
     public IActionResult ForensicsTools(ForensicsToolsViewModel model)

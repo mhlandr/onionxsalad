@@ -389,6 +389,18 @@
       "PackagePath": "staticwebassets\\screenshots\\screenshot_20250131012035.png"
     },
     {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20250131181856.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20250131181856.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20250206130737.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20250206130737.png"
+    },
+    {
+      "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\screenshots\\screenshot_20250206131356.png",
+      "PackagePath": "staticwebassets\\screenshots\\screenshot_20250206131356.png"
+    },
+    {
       "Id": "C:\\Users\\mhlan\\source\\repos\\onion\\onionxsalad\\onion\\wwwroot\\scripts\\capture_screenshot.js",
       "PackagePath": "staticwebassets\\scripts\\capture_screenshot.js"
     },
