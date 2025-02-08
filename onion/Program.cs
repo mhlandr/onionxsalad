@@ -70,7 +70,7 @@ builder.Services.AddSingleton(provider =>
     }
 });
 
-
+builder.Services.AddTransient<IForensicsAnalysisService, ForensicsAnalysisService>();
 
 // Register HttpClient that uses the Tor proxy globally
 builder.Services.AddHttpClient("TorClient")
